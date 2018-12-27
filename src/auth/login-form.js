@@ -2,14 +2,9 @@ import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import { Link } from 'react-router-dom';
 import Input from '../utils/input';
-import { login } from './auth-actions';
 import { required, nonEmpty } from '../utils/validators';
 
 export class LoginForm extends React.Component {
-  onSubmit(values) {
-    return this.props.dispatch(login(values.username, values.password));
-  }
-
   render() {
     let error;
     if (this.props.error) {
@@ -20,10 +15,7 @@ export class LoginForm extends React.Component {
       );
     }
     return (
-      <form
-        className="login-form"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-      >
+      <form className="login-form" onSubmit={this.props.handleSubmit}>
         <div className="error-message">{error}</div>
         <label htmlFor="username">Username</label>
         <Field

@@ -28,7 +28,7 @@ export class HeaderBar extends React.Component {
       <React.Fragment>
         <div className="add-btn">
           <i className="fas fa-plus-circle" />
-          <Link className="addEvent" to="/add">
+          <Link className="addEvent" to="/create">
             Add Event
           </Link>
           <button className="sml-blu" onClick={this.logOut.bind(this)}>

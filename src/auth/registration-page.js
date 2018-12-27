@@ -1,28 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Footer from '../ui/footer';
 import RegistrationForm from './registration-form';
 import HeaderBar from '../nav/header-bar';
+import { registerUser } from './users';
 
-export function RegistrationPage(props) {
-  // If logged in (which happens automatically when registration
-  // is successful) redirect to user's dashboard
-  if (props.loggedIn) {
-    return <Redirect to="/dashboard" />;
-  }
-  return (
-    <div className="row">
-      <div className="home">
-        <HeaderBar />
-        <main role="main" className="main">
-          <h2>Sign Up</h2>
-          <RegistrationForm />
-        </main>
-        <Footer />
+export class RegistrationPage extends React.Component {
+  signUp = values => {
+    const { firstName, lastName, username, password } = values;
+    const user = { firstName, lastName, username, password };
+    this.props.dispatch(registerUser(user)).then(() => {
+      this.props.history.push('/login');
+    });
+  };
+
+  render() {
+    // If already logged in redirect to dashboard
+    if (this.props.loggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
+    return (
+      <div className="row">
+        <div className="home">
+          <HeaderBar />
+          <main role="main" className="main">
+            <h2>Sign Up</h2>
+            <RegistrationForm onSubmit={this.signUp} />
+          </main>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => ({

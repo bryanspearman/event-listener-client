@@ -55,8 +55,7 @@ export const login = (username, password) => dispatch => {
         password
       })
     })
-      // Rejects requests that don't return a 200 status so that
-      // errors follow a consistent format
+      // Rejects requests that don't return 200 status
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())
       .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
@@ -67,8 +66,7 @@ export const login = (username, password) => dispatch => {
             ? 'Incorrect username or password'
             : 'Unable to login, please try again';
         dispatch(authError(err));
-        // Could not authenticate, so returns SubmissionError for Redux
-        // Form
+        // Returns SubmissionError for Redux Form
         return Promise.reject(
           new SubmissionError({
             _error: message
@@ -84,7 +82,7 @@ export const refreshAuthToken = () => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/auth/refresh`, {
     method: 'POST',
     headers: {
-      // Provide existing token as credentials to get a new one
+      // Provide existing token to get a new one
       Authorization: `Bearer ${authToken}`
     }
   })

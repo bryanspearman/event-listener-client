@@ -1,27 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import Footer from '../ui/footer';
 import LoginForm from './login-form';
+import { login } from './auth-actions';
 import HeaderBar from '../nav/header-bar';
 
-export function LoginPage(props) {
-  if (props.loggedIn) {
-    return <Redirect to="/dashboard" />;
-  }
+export class LoginPage extends React.Component {
+  userLogin = values => {
+    this.props.dispatch(login(values.username, values.password));
+  };
 
-  return (
-    <div className="row">
-      <div className="home">
-        <HeaderBar />
-        <main role="main" className="main">
-          <h2>Login</h2>
-          <LoginForm />
-        </main>
-        <Footer />
+  render() {
+    if (this.props.loggedIn) {
+      return <Redirect to="/dashboard" />;
+    }
+    return (
+      <div className="row">
+        <div className="home">
+          <HeaderBar />
+          <main role="main" className="main">
+            <h2>Login</h2>
+            <LoginForm onSubmit={this.userLogin} />
+          </main>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => ({

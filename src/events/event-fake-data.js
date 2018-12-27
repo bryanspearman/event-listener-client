@@ -1,4 +1,4 @@
-export const FUTURE_EVENTS = [
+export const EVENT_LIST = [
   {
     id: 123,
     eventTitle: 'My Important Future Event'
@@ -10,10 +10,7 @@ export const FUTURE_EVENTS = [
   {
     id: 789,
     eventTitle: 'Yet One More Future Event'
-  }
-];
-
-export const PAST_EVENTS = [
+  },
   {
     id: 234,
     eventTitle: 'My First Past Event'
