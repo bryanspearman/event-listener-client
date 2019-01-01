@@ -348,7 +348,7 @@ input:-webkit-autofill:active {
     position: relative;
     display: table-cell;
     min-height: 100vh;
-    width: 25%;
+    width: 26%;
   }
 
   .info-view {
@@ -358,7 +358,7 @@ input:-webkit-autofill:active {
     vertical-align: top;
     background-color: #f2f2f2;
     padding: 40px;
-    width: 60%;
+    width: 59%;
     color: #4a4a4a;
   }
 

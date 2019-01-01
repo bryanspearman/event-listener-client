@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import HeaderBar from '../nav/header-bar';
 
 export function LandingPage(props) {
-  // If logged in redirect straight to user's dashboard
+  // If logged in redirect straight to dashboard
   if (props.loggedIn) {
     return <Redirect to="/dashboard" />;
   }
