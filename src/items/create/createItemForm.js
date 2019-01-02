@@ -1,13 +1,13 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-export const CreateEventForm = props => {
+export const CreateItemForm = props => {
   return (
-    <form id="new-event-form" onSubmit={props.handleSubmit}>
+    <form id="new-item-form" onSubmit={props.handleSubmit}>
       <label>
         Title: <br />
         <Field
-          name="eventTitle"
+          name="itemTitle"
           component="input"
           type="text"
           className="form-field"
@@ -16,7 +16,7 @@ export const CreateEventForm = props => {
       <label>
         Event Date: <br />
         <Field
-          name="targetDate"
+          name="itemDate"
           component="input"
           type="date"
           className="form-field"
@@ -25,7 +25,7 @@ export const CreateEventForm = props => {
       <label>
         Notes: <br />
         <Field
-          name="eventNotes"
+          name="itemNotes"
           component="textarea"
           type="text"
           className="form-field"
@@ -38,5 +38,5 @@ export const CreateEventForm = props => {
 };
 
 export default reduxForm({
-  form: 'createEvent'
-})(CreateEventForm);
+  form: 'createItem'
+})(CreateItemForm);

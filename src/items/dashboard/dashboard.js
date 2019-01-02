@@ -1,9 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import requiresLogin from '../../auth/requires-login';
 import HeaderBar from '../../nav/header-bar';
 import SplashView from './splashView';
-import EventListView from '../list/eventListView';
+import ItemListView from '../list/itemListView';
 
 export class Dashboard extends React.Component {
   render() {
@@ -13,7 +12,10 @@ export class Dashboard extends React.Component {
           <HeaderBar />
           <main role="main">
             <div className="list-nav">
-              <EventListView />
+              <ul className="future-list">
+                <div className="future-hdr">How Long Until</div>
+                <ItemListView />
+              </ul>
             </div>
             <div className="info-view">
               <SplashView />
@@ -25,12 +27,4 @@ export class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { currentUser } = state.auth;
-  return {
-    username: state.auth.currentUser.username,
-    name: `${currentUser.firstName}`
-  };
-};
-
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+export default requiresLogin()(Dashboard);

@@ -5,10 +5,10 @@ import { Route, withRouter } from 'react-router-dom';
 import LandingPage from './home/landing-page';
 import RegistrationPage from './auth/registration-page';
 import LoginPage from './auth/login-page';
-import Dashboard from './events/dashboard/dashboard';
-// import EditEventView from './events/edit/editEventView';
-import CreateEventView from './events/create/createEventView';
-import EventDetailsView from './events/details/eventDetailsView';
+import Dashboard from './items/dashboard/dashboard';
+// import EditItemView from './items/edit/editItemView';
+import CreateItemView from './items/create/createItemView';
+import ItemDetailsView from './items/details/itemDetailsView';
 import AboutPage from './about/about-page';
 
 import { refreshAuthToken } from './auth/auth-actions';
@@ -48,9 +48,9 @@ export class App extends Component {
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-        {/* <Route exact path="/edit" component={EditEventView} /> */}
-        <Route exact path="/create" component={CreateEventView} />
-        <Route exact path="/details/:eventId" component={EventDetailsView} />
+        {/* <Route exact path="/edit" component={EditItemView} /> */}
+        <Route exact path="/create" component={CreateItemView} />
+        <Route exact path="/details/:itemId" component={ItemDetailsView} />
         <Route exact path="/about" component={AboutPage} />
       </div>
     );
