@@ -7,9 +7,14 @@ export class ItemListView extends React.Component {
   componentDidMount() {
     this.props.getItems();
   }
+
+  componentWillMount() {
+    console.log('inside willMount inside itemListView');
+  }
+
   render() {
     const listOfItems = this.props.itemList.map(item => (
-      <Link to={`/items/${item.id}`} key={item.id}>
+      <Link to={`/details/${item.id}`} key={item.id}>
         <li>{item.itemTitle}</li>
       </Link>
     ));

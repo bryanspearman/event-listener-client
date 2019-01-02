@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import requiresLogin from '../../auth/requires-login';
 import HeaderBar from '../../nav/header-bar';
 import ItemDetails from './itemDetails';
@@ -16,7 +15,7 @@ export class ItemDetailsView extends React.Component {
               <ItemListView />
             </div>
             <div className="info-view">
-              <ItemDetails />
+              <ItemDetails itemId={this.props.match.params.itemId} />
             </div>
           </main>
         </div>
@@ -25,4 +24,4 @@ export class ItemDetailsView extends React.Component {
   }
 }
 
-export default requiresLogin(connect(ItemDetailsView));
+export default requiresLogin()(ItemDetailsView);
