@@ -1,16 +1,29 @@
 import { API_BASE_URL } from '../utils/config';
 import { normalizeResponseErrors } from '../utils/utils';
-
 export const GET_ITEMS_REQUEST = 'GET_ITEMS';
+export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
+export const GET_ITEMS_FAILURE = 'GET_ITEMS_FAILURE';
+export const GET_ITEM_REQUEST = 'GET_ITEM';
+export const GET_ITEM_SUCCESS = 'GET_ITEM_SUCCESS';
+export const GET_ITEM_FAILURE = 'GET_ITEM_FAILURE';
+export const CREATE_ITEM_REQUEST = 'CREATE_ITEM';
+export const CREATE_ITEM_SUCCESS = 'CREATE_ITEM_SUCCESS';
+export const CREATE_ITEM_FAILURE = 'CREATE_ITEM_FAILURE';
+export const UPDATE_ITEM_REQUEST = 'UPDATE_ITEM';
+export const UPDATE_ITEM_SUCCESS = 'UPDATE_ITEM_SUCCESS';
+export const UPDATE_ITEM_FAILURE = 'UPDATE_ITEM_FAILURE';
+export const DELETE_ITEM_REQUEST = 'DELETE_ITEM';
+export const DELETE_ITEM_SUCCESS = 'DELETE_ITEM_SUCCESS';
+export const DELETE_ITEM_FAILURE = 'DELETE_ITEM_FAILURE';
+
+// Get All Items
 const getItemsAction = () => ({
   type: GET_ITEMS_REQUEST
 });
-export const GET_ITEMS_SUCCESS = 'GET_ITEMS_SUCCESS';
 const getItemsSuccessAction = items => ({
   type: GET_ITEMS_SUCCESS,
   items
 });
-export const GET_ITEMS_FAILURE = 'GET_ITEMS_FAILURE';
 const getItemsFailureAction = error => ({
   type: GET_ITEMS_FAILURE,
   error
@@ -28,24 +41,22 @@ export const getItems = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ items }) => dispatch(getItemsSuccessAction(items)))
+    .then(items => dispatch(getItemsSuccessAction(items)))
     .catch(err => {
       console.error(err);
       dispatch(getItemsFailureAction(err));
     });
 };
 
-export const GET_ITEM_REQUEST = 'GET_ITEM';
+// Get One Item
 const getItemAction = itemId => ({
   type: GET_ITEM_REQUEST,
   itemId
 });
-export const GET_ITEM_SUCCESS = 'GET_ITEM_SUCCESS';
 const getItemSuccessAction = item => ({
   type: GET_ITEM_SUCCESS,
   item
 });
-export const GET_ITEM_FAILURE = 'GET_ITEM_FAILURE';
 const getItemFailureAction = error => ({
   type: GET_ITEM_FAILURE,
   error
@@ -63,27 +74,26 @@ export const getItem = itemId => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ item }) => dispatch(getItemSuccessAction(item)))
+    .then(item => dispatch(getItemSuccessAction(item)))
     .catch(err => {
       console.error(err);
       dispatch(getItemFailureAction(err));
     });
 };
 
-export const CREATE_ITEM_REQUEST = 'CREATE_ITEM';
+// Create Item
 const createItemAction = item => ({
   type: CREATE_ITEM_REQUEST,
   item
 });
-export const CREATE_ITEM_SUCCESS = 'CREATE_ITEM_SUCCESS';
 const createItemSuccessAction = () => ({
   type: CREATE_ITEM_SUCCESS
 });
-export const CREATE_ITEM_FAILURE = 'CREATE_ITEM_FAILURE';
 const createItemFailureAction = error => ({
   type: CREATE_ITEM_FAILURE,
   error
 });
+
 export const createItem = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createItemAction());
@@ -96,7 +106,7 @@ export const createItem = () => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ item }) => {
+    .then(item => {
       dispatch(createItemSuccessAction());
       return item;
     })
@@ -106,18 +116,16 @@ export const createItem = () => (dispatch, getState) => {
     });
 };
 
-export const UPDATE_ITEM_REQUEST = 'UPDATE_ITEM';
+// Update Item
 const updateItemAction = (itemId, item) => ({
   type: UPDATE_ITEM_REQUEST,
   itemId,
   item
 });
-export const UPDATE_ITEM_SUCCESS = 'UPDATE_ITEM_SUCCESS';
 const updateItemSuccessAction = item => ({
   type: UPDATE_ITEM_SUCCESS,
   item
 });
-export const UPDATE_ITEM_FAILURE = 'UPDATE_ITEM_FAILURE';
 const updateItemFailureAction = error => ({
   type: UPDATE_ITEM_FAILURE,
   error
@@ -135,7 +143,7 @@ export const updateItem = itemId => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
-    .then(({ item }) => {
+    .then(item => {
       dispatch(updateItemSuccessAction(item));
       dispatch(getItem(itemId));
       return item;
@@ -146,16 +154,14 @@ export const updateItem = itemId => (dispatch, getState) => {
     });
 };
 
-export const DELETE_ITEM_REQUEST = 'DELETE_ITEM';
+// Delete Item
 const deleteItemAction = itemId => ({
   type: DELETE_ITEM_REQUEST,
   itemId
 });
-export const DELETE_ITEM_SUCCESS = 'DELETE_ITEM_SUCCESS';
 const deleteItemSuccessAction = () => ({
   type: DELETE_ITEM_SUCCESS
 });
-export const DELETE_ITEM_FAILURE = 'DELETE_ITEM_FAILURE';
 const deleteItemFailureAction = error => ({
   type: DELETE_ITEM_FAILURE,
   error
