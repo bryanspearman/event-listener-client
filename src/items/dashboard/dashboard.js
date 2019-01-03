@@ -11,12 +11,7 @@ export class Dashboard extends React.Component {
         <div className="dashboard">
           <HeaderBar />
           <main role="main">
-            <div className="list-nav">
-              <ul className="future-list">
-                <div className="future-hdr">How Long Until</div>
-                <ItemListView />
-              </ul>
-            </div>
+            <ItemListView />
             <div className="info-view">
               <SplashView />
             </div>

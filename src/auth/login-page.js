@@ -19,7 +19,7 @@ export class LoginPage extends React.Component {
         <div className="home">
           <HeaderBar />
           <main role="main" className="main">
-            <h2>Login</h2>
+            <h2 className="constrain">Login</h2>
             <LoginForm onSubmit={this.userLogin} />
           </main>
         </div>

@@ -8,17 +8,20 @@ export class ItemListView extends React.Component {
     this.props.getItems();
   }
 
-  componentWillMount() {
-    console.log('inside willMount inside itemListView');
-  }
-
   render() {
-    const listOfItems = this.props.itemList.map(item => (
-      <Link to={`/details/${item.id}`} key={item.id}>
+    const listOfItems = this.props.itemList.map((item, index) => (
+      <Link to={`/details/${index}`} key={item.id}>
         <li>{item.itemTitle}</li>
       </Link>
     ));
-    return listOfItems;
+    return (
+      <div className="list-nav">
+        <ul className="future-list">
+          <div className="future-hdr">How Long Until</div>
+          {listOfItems}
+        </ul>
+      </div>
+    );
   }
 }
 

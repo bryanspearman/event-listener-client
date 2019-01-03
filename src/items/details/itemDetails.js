@@ -4,18 +4,13 @@ import { getItem } from '../item-actions';
 // import Counter from './counter';
 
 export class ItemDetails extends Component {
-  componentDidMount() {
-    this.props.getItem(this.props.itemId);
-  }
-
   render() {
-    // const itemDetail = this.props.item.filter(itemDetailObj => {
-    //   return itemDetailObj.id === this.props.itemId;
-    // });
     return this.props.item ? (
       <div id="item-details">
         <h1>{this.props.item.itemTitle}</h1>
-        <span className="item-date">{this.props.item.itemDate}</span>
+        <span className="item-date">
+          {new Date(this.props.item.itemDate).toDateString()}
+        </span>
         <div className="counter">Counter Placeholder</div>
         <div className="item-notes">
           <h2>Notes</h2>
@@ -26,8 +21,8 @@ export class ItemDetails extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { item: state.item.itemDetails };
+const mapStateToProps = (state, props) => {
+  return { item: state.item.itemList[props.index] };
 };
 
 const mapDispatchToProps = {

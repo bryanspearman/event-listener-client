@@ -11,11 +11,9 @@ export class ItemDetailsView extends React.Component {
         <div className="dashboard">
           <HeaderBar />
           <main role="main">
-            <div className="list-nav">
-              <ItemListView />
-            </div>
+            <ItemListView />
             <div className="info-view">
-              <ItemDetails itemId={this.props.match.params.itemId} />
+              <ItemDetails index={this.props.match.params.index} />
             </div>
           </main>
         </div>

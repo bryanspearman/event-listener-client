@@ -24,7 +24,7 @@ export class RegistrationPage extends React.Component {
         <div className="home">
           <HeaderBar />
           <main role="main" className="main">
-            <h2>Sign Up</h2>
+            <h2 className="constrain">Sign Up</h2>
             <RegistrationForm onSubmit={this.signUp} />
           </main>
         </div>
