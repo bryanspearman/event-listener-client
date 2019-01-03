@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   error: null,
   itemList: [],
-  itemDetails: null
+  selected: false
 };
 export default function reducer(state = initialState, action) {
   // REQUESTS
@@ -26,7 +26,6 @@ export default function reducer(state = initialState, action) {
       ...state,
       loading: true,
       error: null,
-      itemDetails: null,
       itemList: []
     };
 
@@ -55,19 +54,19 @@ export default function reducer(state = initialState, action) {
     return {
       ...state,
       loading: false,
-      itemDetails: action.item
+      itemList: action.item
     };
   } else if (action.type === actions.CREATE_ITEM_SUCCESS) {
     return {
       ...state,
       loading: false,
-      itemDetails: action.item
+      itemList: action.item
     };
   } else if (action.type === actions.UPDATE_ITEM_SUCCESS) {
     return {
       ...state,
       loading: false,
-      itemDetails: action.item
+      itemList: action.item
     };
   } else if (action.type === actions.DELETE_ITEM_SUCCESS) {
     return {

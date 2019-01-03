@@ -10,7 +10,7 @@ export class ItemListView extends React.Component {
 
   render() {
     const listOfItems = this.props.itemList.map((item, index) => (
-      <Link to={`/details/${index}`} key={item.id}>
+      <Link to={`/details/${index}`} key={index}>
         <li>{item.itemTitle}</li>
       </Link>
     ));
