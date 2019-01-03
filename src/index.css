@@ -318,6 +318,7 @@ input:-webkit-autofill:active {
   }
 
   .selected {
+    visibility: hidden;
     background-image: url(./ui/images/highlight-arrow.png);
     background-position: right;
     background-repeat: no-repeat;
