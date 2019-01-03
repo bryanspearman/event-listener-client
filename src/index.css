@@ -44,12 +44,6 @@ body {
   color: #fff;
 }
 
-h2 {
-  color: #fff;
-  padding: 20px 40px;
-  text-shadow: 1px 1px 2px #000000;
-}
-
 a {
   color: #fff;
   text-decoration: none;
@@ -73,6 +67,7 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #f1f1f1 inset !important;
   -webkit-text-fill-color: #333333 !important;
 }
+
 /* **************  up to 600px ******************* */
 @media only screen and (min-width: 100px) {
   input[type='text'],
@@ -182,6 +177,12 @@ input:-webkit-autofill:active {
     padding: 0 40px;
     margin: 0 auto;
     position: relative;
+  }
+  .constrain {
+    color: #fff;
+    padding: 20px 40px;
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 2em;
   }
 
   /* Buttons */
@@ -312,6 +313,19 @@ input:-webkit-autofill:active {
     display: none;
   }
 
+  .counter {
+    margin: 30px 0px;
+  }
+
+  .selected {
+    background-image: url(./ui/images/highlight-arrow.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #ed5665;
+    color: #fff;
+    cursor: pointer;
+  }
+
   footer {
     color: #1b6168;
     text-align: center;
@@ -325,7 +339,10 @@ input:-webkit-autofill:active {
 /* **************  600 to 800px ******************* */
 @media only screen and (min-width: 600px) {
   .constrain {
-    padding: 30px 50px;
+    padding: 30px 70px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 2em;
   }
 
   .add-btn {
@@ -338,10 +355,6 @@ input:-webkit-autofill:active {
     padding-top: 5px;
     padding-right: 20px;
     color: #fff;
-  }
-
-  h2 {
-    font-size: 2em;
   }
 
   .list-nav {
@@ -366,7 +379,7 @@ input:-webkit-autofill:active {
     margin-bottom: 40px;
   }
 
-  .set-date {
+  .item-date {
     color: #da4c5a;
     font-weight: bold;
   }
@@ -390,29 +403,32 @@ input:-webkit-autofill:active {
 /* **************  800 to 1024 ******************* */
 @media only screen and (min-width: 800px) {
   .constrain {
-    padding: 30px 95px;
+    padding: 30px 90px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000000;
+    font-size: 2.2em;
   }
+
   .home {
     width: 782px;
   }
+
   .dashboard {
     width: 782px;
-  }
-  h2 {
-    font-size: 2.2em;
   }
 }
 
 /* **************  1024 to 1400 ******************* */
 @media only screen and (min-width: 1024px) {
-  h2 {
+  .constrain {
+    padding: 30px 115px;
     font-size: 2.4em;
   }
 }
 
 /* **************  1400 and up ******************* */
 @media only screen and (min-width: 1400px) {
-  h2 {
+  .constrain {
     font-size: 2.8em;
   }
 }

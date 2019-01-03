@@ -65,7 +65,7 @@ const getItemFailureAction = error => ({
 export const getItem = itemId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getItemAction(itemId));
-  return fetch(`${API_BASE_URL}/items/:${itemId}`, {
+  return fetch(`${API_BASE_URL}/items/${itemId}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
