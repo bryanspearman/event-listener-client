@@ -15,6 +15,7 @@ export const UPDATE_ITEM_FAILURE = 'UPDATE_ITEM_FAILURE';
 export const DELETE_ITEM_REQUEST = 'DELETE_ITEM';
 export const DELETE_ITEM_SUCCESS = 'DELETE_ITEM_SUCCESS';
 export const DELETE_ITEM_FAILURE = 'DELETE_ITEM_FAILURE';
+export const TOGGLE_SELECTED = 'TOGGLE_SELECTED';
 
 // Get All Items
 const getItemsAction = () => ({
@@ -49,9 +50,9 @@ export const getItems = () => (dispatch, getState) => {
 };
 
 // Get One Item
-const getItemAction = itemId => ({
+const getItemAction = index => ({
   type: GET_ITEM_REQUEST,
-  itemId
+  index
 });
 const getItemSuccessAction = item => ({
   type: GET_ITEM_SUCCESS,
@@ -62,10 +63,10 @@ const getItemFailureAction = error => ({
   error
 });
 
-export const getItem = itemId => (dispatch, getState) => {
+export const getItem = index => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(getItemAction(itemId));
-  return fetch(`${API_BASE_URL}/items/${itemId}`, {
+  dispatch(getItemAction(index));
+  return fetch(`${API_BASE_URL}/items/${index}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
@@ -94,11 +95,12 @@ const createItemFailureAction = error => ({
   error
 });
 
-export const createItem = () => (dispatch, getState) => {
+export const createItem = (item, history) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createItemAction());
   return fetch(`${API_BASE_URL}/items/`, {
     method: 'POST',
+    body: JSON.stringify(item),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: `Bearer ${authToken}`
@@ -108,7 +110,7 @@ export const createItem = () => (dispatch, getState) => {
     .then(res => res.json())
     .then(item => {
       dispatch(createItemSuccessAction());
-      return item;
+      return history.push(`/details/${item}`);
     })
     .catch(err => {
       console.error(err);
@@ -136,6 +138,7 @@ export const updateItem = itemId => (dispatch, getState) => {
   dispatch(updateItemAction(itemId));
   return fetch(`${API_BASE_URL}/items/:${itemId}`, {
     method: 'PUT',
+    body: JSON.stringify(itemId),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: `Bearer ${authToken}`
@@ -183,4 +186,14 @@ export const deleteItem = itemId => (dispatch, getState) => {
       console.error(err);
       dispatch(deleteItemFailureAction(err));
     });
+};
+
+// Toggle Selected
+const toggleSelectedAction = index => ({
+  type: TOGGLE_SELECTED,
+  index
+});
+
+export const toggleSelected = index => dispatch => {
+  dispatch(toggleSelectedAction(index));
 };

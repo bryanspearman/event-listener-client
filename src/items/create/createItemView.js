@@ -8,13 +8,12 @@ import { createItem } from '../item-actions';
 
 export class CreateItemView extends React.Component {
   createItem(values) {
-    this.props
-      .createItem({
+    this.props.createItem(
+      {
         item: values
-      })
-      .then(item => {
-        this.props.history.push(`/details/${item.index}`);
-      });
+      },
+      this.props.history
+    );
   }
 
   render() {
