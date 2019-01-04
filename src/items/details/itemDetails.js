@@ -4,25 +4,34 @@ import { getItem } from '../item-actions';
 // import Counter from './counter';
 
 export class ItemDetails extends Component {
+  componentDidMount() {
+    this.props.getItem();
+  }
+
   render() {
-    return this.props.item ? (
+    console.log(this.props.item.itemList);
+    console.log(this.props.index);
+    const { index, item, item: { itemList = [] } = {} } = this.props;
+    return item && index && itemList.length ? (
       <div id="item-details">
-        <h1>{this.props.item.itemTitle}</h1>
+        <h1>{this.props.item.itemList[this.props.index].itemTitle}</h1>
         <span className="item-date">
-          {new Date(this.props.item.itemDate).toDateString()}
+          {new Date(
+            this.props.item.itemList[this.props.index].itemDate
+          ).toDateString()}
         </span>
         <div className="counter">Counter Placeholder</div>
         <div className="item-notes">
           <h2>Notes</h2>
-          <p>{this.props.item.itemNotes}</p>
+          <p>{this.props.item.itemList[this.props.index].itemNotes}</p>
         </div>
       </div>
     ) : null;
   }
 }
 
-const mapStateToProps = (state, props) => {
-  return { item: state.item.itemList[props.index] };
+const mapStateToProps = state => {
+  return { item: state.item };
 };
 
 const mapDispatchToProps = {

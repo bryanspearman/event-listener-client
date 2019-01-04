@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   error: null,
   itemList: [],
-  selected: false
+  activeIndex: null
 };
 export default function reducer(state = initialState, action) {
   // REQUESTS
@@ -72,6 +72,11 @@ export default function reducer(state = initialState, action) {
     return {
       ...state,
       loading: false
+    };
+  } else if (action.type === actions.TOGGLE_SELECTED) {
+    return {
+      ...state,
+      activeIndex: action.index
     };
   }
   return state;
