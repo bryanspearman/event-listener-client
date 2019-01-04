@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getItem } from '../item-actions';
+import { getItems } from '../item-actions';
 // import Counter from './counter';
 
 export class ItemDetails extends Component {
   componentDidMount() {
-    this.props.getItem();
+    this.props.getItems();
   }
 
   render() {
-    console.log(this.props.item.itemList);
     console.log(this.props.index);
     const { index, item, item: { itemList = [] } = {} } = this.props;
     return item && index && itemList.length ? (
@@ -35,7 +34,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  getItem
+  getItems
 };
 
 export default connect(

@@ -11,12 +11,12 @@ export class ItemListView extends React.Component {
   render() {
     const listOfItems = this.props.itemList
       ? this.props.itemList.map((item, index) => (
-          <Link to={`/details/${index}`} key={index}>
+          <Link to={`/items/${index}`} key={index}>
             <li>{item.itemTitle}</li>
           </Link>
         ))
       : null;
-
+   
     return (
       <div className="list-nav">
         <ul className="future-list">
