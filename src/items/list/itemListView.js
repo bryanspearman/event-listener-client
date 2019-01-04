@@ -16,7 +16,7 @@ export class ItemListView extends React.Component {
           </Link>
         ))
       : null;
-   
+
     return (
       <div className="list-nav">
         <ul className="future-list">

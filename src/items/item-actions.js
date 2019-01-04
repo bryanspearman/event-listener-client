@@ -95,7 +95,7 @@ const createItemFailureAction = error => ({
   error
 });
 
-export const createItem = (item, history) => (dispatch, getState) => {
+export const createItem = (item, history, index) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(createItemAction());
   return fetch(`${API_BASE_URL}/items/`, {
@@ -110,7 +110,7 @@ export const createItem = (item, history) => (dispatch, getState) => {
     .then(res => res.json())
     .then(item => {
       dispatch(createItemSuccessAction());
-      return history.push(`/details/${item}`);
+      return history.push(`/items/:${index}`);
     })
     .catch(err => {
       console.error(err);
