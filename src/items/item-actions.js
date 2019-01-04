@@ -63,10 +63,10 @@ const getItemFailureAction = error => ({
   error
 });
 
-export const getItem = index => (dispatch, getState) => {
+export const getItem = itemId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(getItemAction(index));
-  return fetch(`${API_BASE_URL}/items/${index}`, {
+  dispatch(getItemAction(itemId));
+  return fetch(`${API_BASE_URL}/items/:${itemId}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
