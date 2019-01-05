@@ -369,6 +369,13 @@ input:-webkit-autofill:active {
     cursor: pointer;
   }
 
+  .clock-days,
+  .clock-hours,
+  .clock-minutes,
+  .clock-seconds {
+    display: inline;
+  }
+
   footer {
     color: #1b6168;
     text-align: center;
