@@ -11,24 +11,23 @@ export class ItemDetails extends Component {
   render() {
     console.log(this.props.index);
     const { index, item, item: { itemList = [] } = {} } = this.props;
+    const title = this.props.item.itemList[this.props.index].itemTitle;
+    const dateToUse = new Date(
+      this.props.item.itemList[this.props.index].itemDate
+    ).toDateString();
+    const notes = this.props.item.itemList[this.props.index].itemNotes;
 
     return item && index && itemList.length ? (
       <div id="item-details">
-        <h1>{this.props.item.itemList[this.props.index].itemTitle}</h1>
-        <span className="item-date">
-          {new Date(
-            this.props.item.itemList[this.props.index].itemDate
-          ).toDateString()}
-        </span>
+        <h1>{title}</h1>
+        <span className="item-date">{dateToUse}</span>
         <div className="counter">
-          <p>Counter Placeholder</p>
-          <Counter
-            targetDate={this.props.item.itemList[this.props.index].itemDate}
-          />
+          <h2>Counter Placeholder</h2>
+          <Counter targetDate={dateToUse} />
         </div>
         <div className="item-notes">
           <h2>Notes</h2>
-          <p>{this.props.item.itemList[this.props.index].itemNotes}</p>
+          <p>{notes}</p>
         </div>
       </div>
     ) : null;
