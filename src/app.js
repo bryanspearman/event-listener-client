@@ -50,7 +50,7 @@ export class App extends Component {
         <Route exact path="/dashboard" component={Dashboard} />
         {/* <Route exact path="/edit" component={EditItemView} /> */}
         <Route exact path="/create" component={CreateItemView} />
-        <Route exact path="/items/:index" component={ItemDetailsView} />
+        <Route path="/items/:index" component={ItemDetailsView} />
         <Route exact path="/about" component={AboutPage} />
       </div>
     );
