@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getItems } from '../item-actions';
-import Counter from '../counter/counter';
+// import Counter from '../counter/counter';
 
 export class ItemDetails extends Component {
   componentDidMount() {
@@ -23,7 +23,7 @@ export class ItemDetails extends Component {
         <span className="item-date">{dateToUse}</span>
         <div className="counter">
           <h2>Counter Placeholder</h2>
-          <Counter targetDate={dateToUse} />
+          {/* <Counter targetDate={dateToUse} /> */}
         </div>
         <div className="item-notes">
           <h2>Notes</h2>
