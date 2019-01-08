@@ -9,7 +9,7 @@ export class ItemDetails extends Component {
   }
 
   render() {
-    console.log(this.props.index, 'index');
+    // console.log(this.props.index, 'index');
     console.log(this.props.item, 'item');
     const { index, item, item: { itemList = [] } = {} } = this.props;
 
