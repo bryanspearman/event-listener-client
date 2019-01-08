@@ -20,12 +20,10 @@ export class ItemDetails extends Component {
             this.props.item.itemList[this.props.index].itemDate
           ).toDateString()}
         </span>
-        <div className="counter">
-          <p>Counter Placeholder</p>
-          <Counter
-            targetDate={this.props.item.itemList[this.props.index].itemDate}
-          />
-        </div>
+        <p>Counter Placeholder</p>
+        <Counter
+          targetDate={this.props.item.itemList[this.props.index].itemDate}
+        />
         <div className="item-notes">
           <h2>Notes</h2>
           <p>{this.props.item.itemList[this.props.index].itemNotes}</p>
