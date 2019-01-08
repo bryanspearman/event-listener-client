@@ -11,14 +11,15 @@ export class Counter extends React.Component {
       seconds: 0
     };
   }
-
-  componentDidMount() {
-    setTargetDate();
-  }
-
   setTargetDate() {
     this.setState({ targetDate: this.props.targetDate });
   }
+
+  componentDidMount() {
+    this.setTargetDate();
+  }
+
+ 
 
   render() {
     return (
