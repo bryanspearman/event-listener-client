@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getItems } from '../item-actions';
-import Counter from '../counter/counter';
+import Counter from '../../counter/counter';
 
 export class ItemDetails extends Component {
   componentDidMount() {
