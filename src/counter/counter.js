@@ -12,7 +12,11 @@ export class Counter extends React.Component {
     };
   }
 
-  changeTargetDate() {
+  componentDidMount() {
+    setTargetDate();
+  }
+
+  setTargetDate() {
     this.setState({ targetDate: this.props.targetDate });
   }
 
