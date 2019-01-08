@@ -9,7 +9,7 @@ export class ItemDetails extends Component {
   }
 
   render() {
-    console.log(this.props.index);
+    console.log(this.props.index, this.props.item);
     const { index, item, item: { itemList = [] } = {} } = this.props;
 
     return item && index && itemList.length ? (
