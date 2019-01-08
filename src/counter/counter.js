@@ -13,7 +13,7 @@ export class Counter extends React.Component {
   }
 
   componentDidMount() {
-    setTargetDate();
+    this.props.setTargetDate().bind(this);
   }
 
   setTargetDate() {
