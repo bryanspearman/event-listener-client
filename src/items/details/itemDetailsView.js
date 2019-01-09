@@ -3,8 +3,13 @@ import requiresLogin from '../../auth/requires-login';
 import HeaderBar from '../../nav/header-bar';
 import ItemDetails from './itemDetails';
 import ItemListView from '../list/itemListView';
+import { getItems } from '../item-actions';
+import { connect } from 'react-redux';
 
 export class ItemDetailsView extends React.Component {
+  componentDidMount() {
+    this.props.getItems();
+  }
   render() {
     return (
       <div className="row">
@@ -13,7 +18,9 @@ export class ItemDetailsView extends React.Component {
           <main role="main">
             <ItemListView />
             <div className="info-view">
-              <ItemDetails index={this.props.match.params.index} />
+              {this.props.itemList.map(item => (
+                <ItemDetails data={item} />
+              ))}
             </div>
           </main>
         </div>
@@ -21,5 +28,17 @@ export class ItemDetailsView extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return { itemList: state.item.itemList };
+};
 
-export default requiresLogin()(ItemDetailsView);
+const mapDispatchToProps = {
+  getItems
+};
+
+export default requiresLogin()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(ItemDetailsView)
+);
