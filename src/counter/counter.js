@@ -4,22 +4,24 @@ export class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      targetDate: '',
+      targetDate: null,
       days: 0,
       hours: 0,
       minutes: 0,
       seconds: 0
     };
   }
-  setTargetDate() {
+  createTargetDate() {
     this.setState({ targetDate: this.props.targetDate });
   }
 
   componentDidMount() {
-    this.setTargetDate();
+    this.createTargetDate();
   }
 
- 
+  componentWillUnmount() {
+    this.setState({ targetDate: null });
+  }
 
   render() {
     return (

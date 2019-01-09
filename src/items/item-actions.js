@@ -15,7 +15,7 @@ export const UPDATE_ITEM_FAILURE = 'UPDATE_ITEM_FAILURE';
 export const DELETE_ITEM_REQUEST = 'DELETE_ITEM';
 export const DELETE_ITEM_SUCCESS = 'DELETE_ITEM_SUCCESS';
 export const DELETE_ITEM_FAILURE = 'DELETE_ITEM_FAILURE';
-export const TOGGLE_SELECTED = 'TOGGLE_SELECTED';
+export const SELECT_ITEM = 'SELECT_ITEM';
 
 // Get All Items
 const getItemsAction = () => ({
@@ -87,17 +87,18 @@ const createItemAction = item => ({
   type: CREATE_ITEM_REQUEST,
   item
 });
-const createItemSuccessAction = () => ({
-  type: CREATE_ITEM_SUCCESS
+const createItemSuccessAction = item => ({
+  type: CREATE_ITEM_SUCCESS,
+  item
 });
 const createItemFailureAction = error => ({
   type: CREATE_ITEM_FAILURE,
   error
 });
 
-export const createItem = (item, history, index) => (dispatch, getState) => {
+export const createItem = item => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(createItemAction());
+  dispatch(createItemAction(item));
   return fetch(`${API_BASE_URL}/items/`, {
     method: 'POST',
     body: JSON.stringify(item),
@@ -109,8 +110,9 @@ export const createItem = (item, history, index) => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(item => {
-      dispatch(createItemSuccessAction());
-      return history.push(`/items/:${index}`);
+      dispatch(createItemSuccessAction(item));
+      dispatch(getItems());
+      return item;
     })
     .catch(err => {
       console.error(err);
@@ -133,12 +135,12 @@ const updateItemFailureAction = error => ({
   error
 });
 
-export const updateItem = itemId => (dispatch, getState) => {
+export const updateItem = item => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  dispatch(updateItemAction(itemId));
-  return fetch(`${API_BASE_URL}/items/:${itemId}`, {
+  dispatch(updateItemAction(item));
+  return fetch(`${API_BASE_URL}/items/:${item}`, {
     method: 'PUT',
-    body: JSON.stringify(itemId),
+    body: JSON.stringify(item),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
       Authorization: `Bearer ${authToken}`
@@ -148,7 +150,7 @@ export const updateItem = itemId => (dispatch, getState) => {
     .then(res => res.json())
     .then(item => {
       dispatch(updateItemSuccessAction(item));
-      dispatch(getItem(itemId));
+      dispatch(getItems());
       return item;
     })
     .catch(err => {
@@ -188,12 +190,8 @@ export const deleteItem = itemId => (dispatch, getState) => {
     });
 };
 
-// Toggle Selected
-const toggleSelectedAction = index => ({
-  type: TOGGLE_SELECTED,
-  index
+// Selected Item
+export const selectItem = item => ({
+  type: SELECT_ITEM,
+  item
 });
-
-export const toggleSelected = index => dispatch => {
-  dispatch(toggleSelectedAction(index));
-};
