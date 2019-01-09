@@ -1,32 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getItems } from '../item-actions';
 import Counter from '../../counter/counter';
 
-export class ItemDetails extends Component {
+export class ItemDetails extends React.Component {
   componentDidMount() {
     this.props.getItems();
   }
 
   render() {
-    // console.log(this.props.index);
-    console.log(this.props.item);
     const { index, item, item: { itemList = [] } = {} } = this.props;
-
-    const title = this.props.item.itemList[this.props.index].itemTitle;
-    const dateToUse = new Date(
-      this.props.item.itemList[this.props.index].itemDate
-    ).toDateString();
-    const notes = this.props.item.itemList[this.props.index].itemNotes;
 
     return item && index && itemList.length ? (
       <div id="item-details">
-        <h1>{title}</h1>
-        <span className="item-date">{dateToUse}</span>
-        <Counter targetDate={dateToUse} />
+        <h1>
+          {this.props.itemList[this.props.index].this.props.itemList.itemTitle}
+        </h1>
+        <span className="item-date">
+          {new Date(
+            this.props.itemList[this.props.index].itemDate
+          ).toDateString()}
+        </span>
+        <Counter
+          targetDate={new Date(
+            this.props.itemList[this.props.index].this.props.itemList.itemDate
+          ).toDateString()}
+        />
         <div className="item-notes">
           <h2>Notes</h2>
-          <p>{notes}</p>
+          <p>
+            {
+              this.props.itemList[this.props.index].this.props.itemList
+                .itemNotes
+            }
+          </p>
         </div>
       </div>
     ) : null;
@@ -34,7 +41,7 @@ export class ItemDetails extends Component {
 }
 
 const mapStateToProps = state => {
-  return { item: state.item };
+  return { itemList: state.item.itemList };
 };
 
 const mapDispatchToProps = {

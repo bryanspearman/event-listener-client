@@ -3,8 +3,7 @@ import * as actions from '../items/item-actions';
 const initialState = {
   loading: false,
   error: null,
-  itemList: [],
-  activeIndex: null
+  itemList: []
 };
 export default function reducer(state = initialState, action) {
   // REQUESTS
@@ -76,7 +75,7 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === actions.TOGGLE_SELECTED) {
     return {
       ...state,
-      activeIndex: action.index
+      index: action.index
     };
   }
   return state;
