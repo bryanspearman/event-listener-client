@@ -2,15 +2,14 @@ import React from 'react';
 
 export default function ItemListView(props) {
   const listOfItems = props.itemList
-    ? console.log(this.props) &&
-      props.itemList
+    ? props.itemList
         .filter(item => item.selectedItem === item.id)
         .map((item, idx) => (
           <li onClick={item.selectedItem} key={idx}>
             {item.itemTitle}
           </li>
         ))
-    : null;
+    : 'Something went wrong in itemListView';
 
   return (
     <div className="list-nav">
