@@ -19,7 +19,7 @@ export class ItemDetailsView extends React.Component {
     : null;
 
   render() {
-    return (
+    return this.props.itemList ? (
       <div className="row">
         <div className="dashboard">
           <HeaderBar />
@@ -34,7 +34,7 @@ export class ItemDetailsView extends React.Component {
           </main>
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 const mapStateToProps = state => {
