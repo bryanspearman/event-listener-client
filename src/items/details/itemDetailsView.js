@@ -12,13 +12,13 @@ export class ItemDetailsView extends React.Component {
     this.props.selectItem();
   }
 
-  render() {
-    const setSelectedItem = this.props
-      ? item => {
-          this.props.selectedItem({ selectedItem: item });
-        }
-      : null;
+  setSelectedItem = this.props
+    ? item => {
+        this.props.selectedItem({ selectedItem: item });
+      }
+    : null;
 
+  render() {
     return (
       <div className="row">
         <div className="dashboard">
@@ -26,7 +26,7 @@ export class ItemDetailsView extends React.Component {
           <main role="main">
             <ItemListView
               itemList={this.props.itemList}
-              selectedItem={setSelectedItem()}
+              selectedItem={this.setSelectedItem()}
             />
             <div className="info-view">
               <ItemDetails data={this.props.selectedItem} />
