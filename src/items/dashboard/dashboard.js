@@ -1,5 +1,5 @@
 import React from 'react';
-import requiresLogin from '../../auth/requires-login';
+import requiresLogin from '../../utils/requires-login';
 import HeaderBar from '../../nav/header-bar';
 import ItemDetails from '../details/itemDetails';
 import ItemListView from '../list/itemListView';

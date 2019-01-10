@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Event Listener [![Build Status](https://travis-ci.com/bryanspearman/event-listener.svg?branch=master)](https://travis-ci.com/bryanspearman/event-listener)
 
-## Available Scripts
+My super cool description of the app. <br>
+[Try it out]
 
-In the project directory, you can run:
+## Motivation:
 
-### `npm start`
+This is a React application that was built to test my knowledge of React, Redux and Node.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/lrg-scrns-landingpage.png?raw=true"/>
 
-### `npm test`
+<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/lrg-screens-create.png?raw=true"/>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/sml-scrns-dashboard.png?raw=true"/>
 
-### `npm run build`
+## Built With
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- HTML5
+- CSS3
+- JavaScript ES6
+- jQuery
+- NodeJS
+- MongoDB
+- Express
+- Mongoose
+- mLab
+- Heroku
+- Travis
+- Mocha
+- Chai
+- CLI
+- GIT
+- GitHub
+- Custom responsive media queries
+- Semantic HTML
+- ARIA compliance
+- Reusable code modularization
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Author
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Bryan Spearman
 
-### `npm run eject`
+## Demo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Username: demo<br>
+Password: demo456789
+[Try it out]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[try it out]: https://event-listener-client.herokuapp.com/

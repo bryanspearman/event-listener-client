@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import { Link } from 'react-router-dom';
 import Input from '../utils/input';
-import { required, nonEmpty } from '../utils/validators';
+import { required, nonEmpty } from './validators';
 
 export class LoginForm extends React.Component {
   render() {

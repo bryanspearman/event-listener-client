@@ -1,4 +1,4 @@
-import * as actions from '../items/item-actions';
+import * as actions from './item-actions';
 
 const initialState = {
   loading: false,

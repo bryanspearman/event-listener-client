@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { clearAuth } from '../auth/auth-actions';
-import { clearAuthToken } from '../utils/local-storage';
+import { clearAuthToken } from '../auth/local-storage';
 import logo from '../ui/images/logo.png';
 
 export class HeaderBar extends React.Component {

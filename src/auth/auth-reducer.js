@@ -4,7 +4,7 @@ import {
   AUTH_REQUEST,
   AUTH_SUCCESS,
   AUTH_ERROR
-} from '../auth/auth-actions';
+} from './auth-actions';
 
 const initialState = {
   authToken: null,
