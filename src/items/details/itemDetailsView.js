@@ -10,16 +10,12 @@ export class ItemDetailsView extends React.Component {
   componentDidMount() {
     this.props.getItems();
     this.props.selectItem();
+    this.setSelectedItem = this.setSelectedItem.bind(this);
   }
 
-  setSelectedItem = this.props
-    ? item => {
-        this.props.selectedItem({ selectedItem: item });
-      }
-    : null;
+  setSelectedItem = item => ({ selectedItem: item });
 
   render() {
-    console.log(this.props);
     return (
       <div className="row">
         <div className="dashboard">

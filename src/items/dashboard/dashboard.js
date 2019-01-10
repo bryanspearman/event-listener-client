@@ -10,12 +10,12 @@ export class Dashboard extends React.Component {
   componentDidMount() {
     this.props.getItems();
     this.props.selectItem();
+    this.setSelectedItem = this.setSelectedItem.bind(this);
   }
-  setSelectedItem = this.props
-    ? item => {
-        this.props.selectedItem({ selectedItem: item });
-      }
-    : null;
+  setSelectedItem = item => {
+    console.log(item);
+    return { selectedItem: item };
+  };
 
   render() {
     return (
@@ -25,7 +25,7 @@ export class Dashboard extends React.Component {
           <main role="main">
             <ItemListView
               itemList={this.props.itemList}
-              selectedItem={this.setSelectedItem()}
+              selectedItem={this.props.selectedItem}
             />
             <div className="info-view">
               <SplashView />

@@ -7,7 +7,7 @@ export default function ItemListView(props) {
           {item.itemTitle}
         </li>
       ))
-    : 'Did not receive any props from parent';
+    : null;
 
   return (
     <div className="list-nav">
