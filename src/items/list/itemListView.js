@@ -1,11 +1,13 @@
 import React from 'react';
 
 export default function ItemListView(props) {
-  const listOfItems = props.itemList.map((item, idx) => (
-    <li onClick={item.selectedItem} key={idx}>
-      {item.itemTitle}
-    </li>
-  ));
+  const listOfItems = props.itemList
+    ? props.itemList.map(item => (
+        <li onClick={item.selectedItem} key={item.id}>
+          {item.itemTitle}
+        </li>
+      ))
+    : 'Did not receive any props from parent';
 
   return (
     <div className="list-nav">
