@@ -9,7 +9,7 @@ export class ItemListView extends React.Component {
   }
 
   render() {
-    setSelectedItem = item => this.props.selectItem(item);
+    const setSelectedItem = item => this.props.selectItem(item);
 
     const listOfItems = this.props.itemList
       ? this.props.itemList.map(item => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from '../../counter/counter';
+import Counter from '../../ui/counter';
 
 export default function ItemDetails(props) {
   return (

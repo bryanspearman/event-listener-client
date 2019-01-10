@@ -8,7 +8,7 @@ import LoginPage from './auth/login-page';
 import Dashboard from './items/dashboard/dashboard';
 // import EditItemView from './items/edit/editItemView';
 import CreateItemView from './items/create/createItemView';
-import ItemDetailsView from './items/details/itemDetailsView';
+// import ItemDetailsView from './items/details/itemDetailsView';
 import AboutPage from './about/about-page';
 
 import { refreshAuthToken } from './auth/auth-actions';
@@ -50,7 +50,7 @@ export class App extends Component {
         <Route exact path="/dashboard" component={Dashboard} />
         {/* <Route exact path="/edit" component={EditItemView} /> */}
         <Route exact path="/create" component={CreateItemView} />
-        <Route path="/items/:index" component={ItemDetailsView} />
+        {/* <Route path="/items/:index" component={ItemDetailsView} /> */}
         <Route exact path="/about" component={AboutPage} />
       </div>
     );

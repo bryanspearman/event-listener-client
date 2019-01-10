@@ -11,7 +11,7 @@ export class CreateItemView extends React.Component {
     this.props.createItem(
       {
         item: values
-      }
+      },
       this.props.history
     );
   }
