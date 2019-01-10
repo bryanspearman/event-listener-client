@@ -10,10 +10,9 @@ export class ItemDetailsView extends React.Component {
   componentDidMount() {
     this.props.getItems();
     this.props.selectItem();
-    this.setSelectedItem = this.setSelectedItem.bind(this);
   }
 
-  setSelectedItem = item => ({ selectedItem: item });
+  setSelectedItem = item => this.props.selectItem(item);
 
   render() {
     return (

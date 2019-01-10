@@ -9,9 +9,7 @@ export class ItemListView extends React.Component {
   }
 
   render() {
-    const setSelectedItem = item => {
-      return { selectedItem: item };
-    };
+    setSelectedItem = item => this.props.selectItem(item);
 
     const listOfItems = this.props.itemList
       ? this.props.itemList.map(item => (
@@ -20,6 +18,7 @@ export class ItemListView extends React.Component {
           </li>
         ))
       : null;
+
     return (
       <div className="list-nav">
         <ul className="future-list">

@@ -1,7 +1,7 @@
 import React from 'react';
 import requiresLogin from '../../auth/requires-login';
 import HeaderBar from '../../nav/header-bar';
-import SplashView from './splashView';
+import ItemDetails from '../details/itemDetails';
 import ItemListView from '../list/itemListView';
 
 export class Dashboard extends React.Component {
@@ -13,7 +13,7 @@ export class Dashboard extends React.Component {
           <main role="main">
             <ItemListView />
             <div className="info-view">
-              <SplashView />
+              <ItemDetails data={this.props.selectedItem} />
             </div>
           </main>
         </div>
@@ -22,4 +22,20 @@ export class Dashboard extends React.Component {
   }
 }
 
-export default requiresLogin()(Dashboard);
+const mapStateToProps = state => {
+  return {
+    itemList: state.item.itemList,
+    selectedItem: state.item.selectedItem
+  };
+};
+const mapDispatchToProps = {
+  getItems,
+  selectItem
+};
+
+export default requiresLogin()(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Dashboard)
+);
