@@ -87,9 +87,8 @@ const createItemAction = item => ({
   type: CREATE_ITEM_REQUEST,
   item
 });
-const createItemSuccessAction = item => ({
-  type: CREATE_ITEM_SUCCESS,
-  item
+const createItemSuccessAction = () => ({
+  type: CREATE_ITEM_SUCCESS
 });
 const createItemFailureAction = error => ({
   type: CREATE_ITEM_FAILURE,
@@ -110,7 +109,7 @@ export const createItem = item => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(item => {
-      dispatch(createItemSuccessAction(item));
+      dispatch(createItemSuccessAction());
       dispatch(getItems());
       return item;
     })

@@ -19,6 +19,7 @@ export class ItemDetailsView extends React.Component {
     : null;
 
   render() {
+    console.log(this.props);
     return (
       <div className="row">
         <div className="dashboard">
