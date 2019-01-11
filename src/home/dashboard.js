@@ -1,10 +1,11 @@
 import React from 'react';
-import requiresLogin from '../../utils/requires-login';
-import HeaderBar from '../../nav/header-bar';
-import ItemDetails from './itemDetails';
-import ItemListView from './itemListView';
-import { getItems, selectItem } from '../item-actions';
 import { connect } from 'react-redux';
+import requiresLogin from '../utils/requires-login';
+import HeaderBar from '../nav/header-bar';
+import SplashView from './splashView';
+import ItemDetails from '../items/details/itemDetails';
+import Sidebar from '../ui/sidebar';
+import { getItems, selectItem } from '../items/item-actions';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -12,16 +13,23 @@ export class Dashboard extends React.Component {
     this.props.selectItem();
   }
 
+  renderInfoView() {
+    if (this.props.selectedItem) {
+      return <ItemDetails data={this.props.selectedItem} />;
+    } else {
+      return <SplashView />;
+    }
+  }
+
   render() {
+    const setSelectedItem = item => this.props.selectItem(item);
     return (
       <div className="row">
         <div className="dashboard">
           <HeaderBar />
           <main role="main">
-            <ItemListView />
-            <div className="info-view">
-              <ItemDetails data={this.props.selectedItem} />
-            </div>
+            <Sidebar />
+            <div className="info-view">{this.renderInfoView()}</div>
           </main>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../../utils/requires-login';
 import HeaderBar from '../../nav/header-bar';
-import ItemListView from '../dashboard/itemListView';
+import Sidebar from '../../ui/sidebar';
 import CreateItemForm from './createItemForm';
 import { createItem } from '../item-actions';
 
@@ -22,7 +22,7 @@ export class CreateItemView extends React.Component {
         <div className="dashboard">
           <HeaderBar />
           <main role="main" id="item-create">
-            <ItemListView />
+            <Sidebar />
             <div className="info-view">
               <h1>Create a New Event</h1>
               <CreateItemForm onSubmit={this.createItem.bind(this)} />

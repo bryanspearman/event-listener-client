@@ -26,6 +26,11 @@ export default function reducer(state = initialState, action) {
       itemList: [],
       selectedItem: null
     };
+  } else if (action.type === actions.SELECT_ITEM) {
+    return {
+      ...state,
+      selectedItem: action.item
+    };
 
     // ERRORS
   } else if (
@@ -50,14 +55,12 @@ export default function reducer(state = initialState, action) {
   } else if (action.type === actions.CREATE_ITEM_SUCCESS) {
     return {
       ...state,
-      loading: false,
-      selectedItem: action.item
+      loading: false
     };
   } else if (action.type === actions.UPDATE_ITEM_SUCCESS) {
     return {
       ...state,
-      loading: false,
-      selectedItem: action.item
+      loading: false
     };
   } else if (action.type === actions.DELETE_ITEM_SUCCESS) {
     return {
