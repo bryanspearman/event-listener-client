@@ -2,6 +2,9 @@ import React from 'react';
 import Counter from '../../ui/counter';
 
 export default function ItemDetails(props) {
+  if (!props.data) {
+    return <p>Loading Item {props.match.params.id} ...</p>;
+  }
   return (
     <div id="item-details">
       <h1>{props.data.itemTitle}</h1>

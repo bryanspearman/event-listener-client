@@ -52,6 +52,12 @@ export default function reducer(state = initialState, action) {
       loading: false,
       itemList: action.items
     };
+    // } else if (action.type === actions.GET_ITEM_SUCCESS) {
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     selectedItem: action.item
+    //   };
   } else if (action.type === actions.CREATE_ITEM_SUCCESS) {
     return {
       ...state,

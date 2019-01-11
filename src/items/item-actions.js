@@ -110,7 +110,6 @@ export const createItem = item => (dispatch, getState) => {
     .then(res => res.json())
     .then(item => {
       dispatch(createItemSuccessAction());
-      dispatch(getItems());
       return item;
     })
     .catch(err => {
@@ -149,7 +148,6 @@ export const updateItem = item => (dispatch, getState) => {
     .then(res => res.json())
     .then(item => {
       dispatch(updateItemSuccessAction(item));
-      dispatch(getItems());
       return item;
     })
     .catch(err => {

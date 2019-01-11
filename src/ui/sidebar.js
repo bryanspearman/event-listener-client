@@ -1,16 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 export default class Sidebar extends React.Component {
+  static propTypes = {
+    itemList: PropTypes.array.isRequired,
+    setSelectedItem: PropTypes.func.isRequired
+  };
+
   render() {
     const listOfItems = this.props.itemList
       ? this.props.itemList.map(item => (
-          <li
-            className={this.props.selectedItem ? 'selected' : null}
-            onClick={() => this.props.setSelectedItem(item)}
-            key={item.id}
-          >
-            {item.itemTitle}
-          </li>
+          <Link to={`/dashboard/details/${item.id}`}>
+            <li
+              className={this.props.selectedItem ? 'selected' : null}
+              key={item.id}
+            >
+              {item.itemTitle}
+            </li>
+          </Link>
         ))
       : null;
 
