@@ -363,8 +363,8 @@ input:-webkit-autofill:active {
     background-image: url(./ui/images/highlight-arrow.png);
     background-position: right;
     background-repeat: no-repeat;
-    background-color: #ed5665;
-    color: #fff;
+    background-color: #ed5665 !important;
+    color: #fff !important;
     cursor: pointer;
   }
 

@@ -10,7 +10,7 @@ export class Sidebar extends React.Component {
   };
 
   render() {
-    const listOfItems = this.props.itemList
+    const futureItems = this.props.itemList
       ? this.props.itemList.map(item => (
           <Link to={`/dashboard/details/${item.id}`} key={item.id}>
             <li
@@ -31,7 +31,7 @@ export class Sidebar extends React.Component {
       <div className="list-nav">
         <ul className="future-list">
           <div className="future-hdr">How Long Until</div>
-          {listOfItems}
+          {futureItems}
           <div className="past-hdr">How Long Since</div>
         </ul>
       </div>
