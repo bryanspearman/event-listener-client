@@ -1,21 +1,49 @@
 import React from 'react';
-import Counter from '../../ui/counter';
+import { connect } from 'react-redux';
 
-export default function ItemDetails(props) {
-  if (!props.data) {
-    return <p>Loading Item {props.match.params.id} ...</p>;
+import Counter from '../../ui/counter';
+import { getItem } from '../item-actions';
+
+export class ItemDetails extends React.Component {
+  componentDidMount() {
+    this.props.getItem(this.props.match.params.id);
   }
-  return (
-    <div id="item-details">
-      <h1>{props.data.itemTitle}</h1>
-      <span className="item-date">
-        {new Date(props.data.itemDate).toDateString()}
-      </span>
-      <Counter targetDate={new Date(props.data.itemDate).toDateString()} />
-      <div className="item-notes">
-        <h2>Notes</h2>
-        <p>{props.data.itemNotes}</p>
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      this.props.getItem(this.props.match.params.id);
+    }
+  }
+  render() {
+    if (!this.props.selectedItem) {
+      return <p>Loading...</p>;
+    }
+    return (
+      <div id="item-details">
+        <h1>{this.props.selectedItem.itemTitle}</h1>
+        <span className="item-date">
+          {new Date(this.props.selectedItem.itemDate).toDateString()}
+        </span>
+        <Counter
+          targetDate={new Date(this.props.selectedItem.itemDate).toDateString()}
+        />
+        <div className="item-notes">
+          <h2>Notes</h2>
+          <p>{this.props.selectedItem.itemNotes}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  selectedItem: state.item.selectedItem
+});
+
+const mapDispatchToProps = {
+  getItem
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ItemDetails);

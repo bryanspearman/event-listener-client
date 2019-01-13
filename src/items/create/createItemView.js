@@ -2,19 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../../utils/requires-login';
 import CreateItemForm from './createItemForm';
-import { createItem } from '../item-actions';
+import { getItems, createItem } from '../item-actions';
 
 export class CreateItemView extends React.Component {
   createItem(values) {
-    this.props.createItem(
-      {
+    this.props
+      .createItem({
         item: values
-      },
-      this.props.history
-    ); /*.then(() => {
-      this.props.getItems();
-      this.props.history.push('/');
-    });*/
+      })
+      .then(createdItem => {
+        this.props.getItems();
+        this.props.history.push(`/dashboard/details/${createdItem.id}`);
+      });
   }
 
   render() {
@@ -27,13 +26,21 @@ export class CreateItemView extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    itemList: state.item.itemList,
+    selectedItem: state.item.selectedItem
+  };
+};
+
 const mapDispatchToProps = {
-  createItem
+  createItem,
+  getItems
 };
 
 export default requiresLogin()(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(CreateItemView)
 );

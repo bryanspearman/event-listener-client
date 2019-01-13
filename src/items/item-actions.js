@@ -50,9 +50,8 @@ export const getItems = () => (dispatch, getState) => {
 };
 
 // Get One Item
-const getItemAction = index => ({
-  type: GET_ITEM_REQUEST,
-  index
+const getItemAction = () => ({
+  type: GET_ITEM_REQUEST
 });
 const getItemSuccessAction = item => ({
   type: GET_ITEM_SUCCESS,
@@ -66,7 +65,7 @@ const getItemFailureAction = error => ({
 export const getItem = itemId => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   dispatch(getItemAction(itemId));
-  return fetch(`${API_BASE_URL}/items/:${itemId}`, {
+  return fetch(`${API_BASE_URL}/items/${itemId}`, {
     method: 'GET',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',

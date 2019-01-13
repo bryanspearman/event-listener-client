@@ -16,14 +16,6 @@ export class Dashboard extends React.Component {
     this.props.getItems();
   }
 
-  renderInfoView() {
-    if (this.props.selectedItem) {
-      return <ItemDetails data={this.props.selectedItem} />;
-    } else {
-      return <SplashView />;
-    }
-  }
-
   render() {
     // const setSelectedItem = item => this.props.selectItem(item);
     return (
@@ -40,9 +32,7 @@ export class Dashboard extends React.Component {
               <Route
                 exact
                 path="/dashboard/details/:id"
-                component={props => (
-                  <ItemDetails data={this.props.selectedItem} {...props} />
-                )}
+                component={ItemDetails}
               />
               <Route
                 exact

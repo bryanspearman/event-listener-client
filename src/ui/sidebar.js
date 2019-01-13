@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class Sidebar extends React.Component {
+export class Sidebar extends React.Component {
   static propTypes = {
     itemList: PropTypes.array.isRequired,
     setSelectedItem: PropTypes.func.isRequired
@@ -11,10 +12,14 @@ export default class Sidebar extends React.Component {
   render() {
     const listOfItems = this.props.itemList
       ? this.props.itemList.map(item => (
-          <Link to={`/dashboard/details/${item.id}`}>
+          <Link to={`/dashboard/details/${item.id}`} key={item.id}>
             <li
-              className={this.props.selectedItem ? 'selected' : null}
-              key={item.id}
+              className={
+                this.props.selectedItem &&
+                this.props.selectedItem.id === item.id
+                  ? 'selected'
+                  : null
+              }
             >
               {item.itemTitle}
             </li>
@@ -33,3 +38,9 @@ export default class Sidebar extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  selectedItem: state.item.selectedItem
+});
+
+export default connect(mapStateToProps)(Sidebar);
