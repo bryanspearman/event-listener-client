@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Counter from '../../ui/counter';
+import CounterView from '../../counter/counterView';
 import { getItem } from '../item-actions';
 
 export class ItemDetails extends React.Component {
@@ -23,7 +23,7 @@ export class ItemDetails extends React.Component {
         <span className="item-date">
           {new Date(this.props.selectedItem.itemDate).toDateString()}
         </span>
-        <Counter
+        <CounterView
           targetDate={new Date(this.props.selectedItem.itemDate).toDateString()}
         />
         <div className="item-notes">

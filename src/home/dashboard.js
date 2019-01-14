@@ -39,7 +39,7 @@ export class Dashboard extends React.Component {
                 path="/dashboard/create"
                 component={CreateItemView}
               />
-              <Route exact path="/about" component={AboutPage} />
+              <Route exact path="/dashboard/about" component={AboutPage} />
             </div>
           </main>
         </div>

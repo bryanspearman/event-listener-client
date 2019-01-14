@@ -368,11 +368,18 @@ input:-webkit-autofill:active {
     cursor: pointer;
   }
 
-  .clock-days,
-  .clock-hours,
-  .clock-minutes,
-  .clock-seconds {
-    display: inline;
+  .clock-number {
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+    margin: 5px;
+  }
+
+  .number-label {
+    text-align: center;
+    font-size: 14px;
+    margin: 5px;
   }
 
   footer {
