@@ -11,7 +11,6 @@ export class EditItemView extends React.Component {
   }
 
   updateItem(values) {
-    debugger;
     this.props
       .updateItem({
         id: this.props.selectedItem.id,
