@@ -30,15 +30,22 @@ export class ItemDetails extends React.Component {
 
     return (
       <div id="item-details">
-        <CounterView targetDate={itemDate.toDateString()} />
-        <h3>{dateIsInPast ? 'since' : 'until'}</h3>
         <h1>{selectedItem.itemTitle}</h1>
+        <CounterView targetDate={itemDate.toDateString()} />
+        <span>{dateIsInPast ? 'Since: ' : 'Until: '}</span>
         <span className="item-date">{itemDate.toDateString()}</span>
+        <div className="details-btns">
+          <Link to={`/dashboard/edit/${selectedItem.id}`}>
+            <button className="xsml-blu">Edit</button>
+          </Link>
+          <Link to={`/dashboard/delete/${selectedItem.id}`}>
+            <button className="xsml-red">Delete</button>
+          </Link>
+        </div>
         <div className="item-notes">
           <h2>Notes</h2>
           <p>{selectedItem.itemNotes}</p>
         </div>
-        <Link to={`/dashboard/edit/${selectedItem.id}`}>Edit</Link>
       </div>
     );
   }

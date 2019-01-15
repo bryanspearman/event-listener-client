@@ -217,6 +217,40 @@ input:-webkit-autofill:active {
     cursor: pointer;
   }
 
+  .xsml-red {
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 10px 8px 10px;
+    background-color: #ed5665;
+    border: 1px solid #f76775;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .xsml-red:hover {
+    background-color: #da4c5a;
+    color: #6e1e26;
+  }
+
+  .xsml-blu {
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 4px 8px 20px;
+    background-color: #32abb8;
+    border: solid 1px #43c7d6;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .xsml-blu:hover {
+    background-color: #38a5b1;
+    color: #104349;
+  }
+
   .sml-red {
     font-size: 16px;
     width: 85px;
@@ -335,6 +369,15 @@ input:-webkit-autofill:active {
     color: #fff;
   }
 
+  .selected {
+    background-image: url(./ui/images/highlight-arrow.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #ed5665 !important;
+    color: #fff !important;
+    cursor: pointer;
+  }
+
   .info-view {
     display: none;
   }
@@ -352,34 +395,36 @@ input:-webkit-autofill:active {
   }
 
   .info-view h1 {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+  }
+
+  .item-notes {
+    margin-top: 20px;
   }
 
   .counter {
     margin: 30px 0px;
+    background-color: #fff;
+    text-align: center;
   }
 
-  .selected {
-    background-image: url(./ui/images/highlight-arrow.png);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-color: #ed5665 !important;
-    color: #fff !important;
-    cursor: pointer;
+  table {
+    width: 100%;
   }
 
   .clock-number {
-    width: 100px;
     text-align: center;
     font-weight: bold;
     font-size: 45px;
-    margin: 5px;
+    margin: 5px 10px 0px 10px;
   }
 
   .number-label {
     text-align: center;
     font-size: 14px;
     margin: 5px;
+    padding: 5px;
+    border-top: 1px dotted #f2f2f2;
   }
 
   footer {
@@ -426,13 +471,18 @@ input:-webkit-autofill:active {
     min-height: 100vh;
     vertical-align: top;
     background-color: #f2f2f2;
-    padding: 40px;
+    padding: 20px 40px;
     width: 59%;
     color: #4a4a4a;
   }
 
   .info-view header {
     margin-bottom: 40px;
+  }
+
+  .details-btns {
+    display: flex;
+    float: right;
   }
 
   .item-date {
