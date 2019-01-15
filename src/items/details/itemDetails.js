@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import CounterView from '../../counter/counterView';
 import { getItem } from '../item-actions';
@@ -13,23 +14,31 @@ export class ItemDetails extends React.Component {
       this.props.getItem(this.props.match.params.id);
     }
   }
+
+  dateIsInPast(testDate) {
+    const now = new Date();
+    return !!(testDate.getTime() < now.getTime());
+  }
+
   render() {
-    if (!this.props.selectedItem) {
+    const { selectedItem } = this.props;
+    if (!selectedItem) {
       return <p>Loading...</p>;
     }
+    const itemDate = new Date(selectedItem.itemDate);
+    const dateIsInPast = this.dateIsInPast(itemDate);
+
     return (
       <div id="item-details">
-        <h1>{this.props.selectedItem.itemTitle}</h1>
-        <span className="item-date">
-          {new Date(this.props.selectedItem.itemDate).toDateString()}
-        </span>
-        <CounterView
-          targetDate={new Date(this.props.selectedItem.itemDate).toDateString()}
-        />
+        <CounterView targetDate={itemDate.toDateString()} />
+        <h3>{dateIsInPast ? 'since' : 'until'}</h3>
+        <h1>{selectedItem.itemTitle}</h1>
+        <span className="item-date">{itemDate.toDateString()}</span>
         <div className="item-notes">
           <h2>Notes</h2>
-          <p>{this.props.selectedItem.itemNotes}</p>
+          <p>{selectedItem.itemNotes}</p>
         </div>
+        <Link to={`/dashboard/edit/${selectedItem.id}`}>Edit</Link>
       </div>
     );
   }

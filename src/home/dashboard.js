@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
-import CreateItemView from '../items/create/createItemView';
-import AboutPage from '../about/about-page';
 import requiresLogin from '../utils/requires-login';
 import HeaderBar from '../nav/header-bar';
-import SplashView from './splashView';
-import ItemDetails from '../items/details/itemDetails';
 import Sidebar from '../ui/sidebar';
+import SplashView from './splashView';
+import CreateItemView from '../items/create/createItemView';
+import EditItemView from '../items/edit/editItemView';
+import ItemDetails from '../items/details/itemDetails';
+
 import { getItems, selectItem } from '../items/item-actions';
 
 export class Dashboard extends React.Component {
@@ -39,7 +40,11 @@ export class Dashboard extends React.Component {
                 path="/dashboard/create"
                 component={CreateItemView}
               />
-              <Route exact path="/dashboard/about" component={AboutPage} />
+              <Route
+                exact
+                path="/dashboard/edit/:id"
+                component={EditItemView}
+              />
             </div>
           </main>
         </div>

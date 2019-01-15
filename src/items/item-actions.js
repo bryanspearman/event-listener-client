@@ -132,10 +132,11 @@ const updateItemFailureAction = error => ({
   error
 });
 
-export const updateItem = item => (dispatch, getState) => {
+export const updateItem = data => (dispatch, getState) => {
+  const { item, id } = data;
   const authToken = getState().auth.authToken;
   dispatch(updateItemAction(item));
-  return fetch(`${API_BASE_URL}/items/:${item}`, {
+  return fetch(`${API_BASE_URL}/items/${id}`, {
     method: 'PUT',
     body: JSON.stringify(item),
     headers: {
@@ -144,10 +145,8 @@ export const updateItem = item => (dispatch, getState) => {
     }
   })
     .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then(item => {
-      dispatch(updateItemSuccessAction(item));
-      return item;
+    .then(() => {
+      dispatch(updateItemSuccessAction());
     })
     .catch(err => {
       console.error(err);

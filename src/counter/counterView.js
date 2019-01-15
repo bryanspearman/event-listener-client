@@ -10,13 +10,14 @@ export class CounterView extends React.Component {
       seconds: 0
     };
   }
+
   componentWillMount() {
-    this.getTimeUntil(this.props.targetDate);
+    this.setTimer(this.props.targetDate);
   }
 
   componentDidMount() {
     this.timerId = setInterval(() => {
-      this.getTimeUntil(this.props.targetDate);
+      this.setTimer(this.props.targetDate);
     }, 1000);
   }
 
@@ -31,8 +32,17 @@ export class CounterView extends React.Component {
     return num < 0 ? num : leadingZero(num);
   }
 
-  getTimeUntil(targetDate) {
-    const time = Date.parse(targetDate) - Date.parse(new Date());
+  setTimer(targetDate) {
+    let time;
+    const now = new Date();
+    if (new Date(targetDate).getTime() < now.getTime()) {
+      // targetDate is in the past
+      time = Date.parse(now) - Date.parse(targetDate);
+    } else {
+      // targetDate is in the future
+      time = Date.parse(targetDate) - Date.parse(now);
+    }
+
     const seconds = Math.floor((time / 1000) % 60);
     const minutes = Math.floor((time / 1000 / 60) % 60);
     const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
