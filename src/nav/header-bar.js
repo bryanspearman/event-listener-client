@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { clearAuth } from '../auth/auth-actions';
 import { clearAuthToken } from '../auth/local-storage';
 import logo from '../ui/images/logo.png';
+import NavBurger from './nav-burger';
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -31,9 +32,6 @@ export class HeaderBar extends React.Component {
           <Link className="addEvent" to="/dashboard/create">
             Add Event
           </Link>
-          <button className="sml-blu" onClick={this.logOut.bind(this)}>
-            Logout
-          </button>
         </div>
       </React.Fragment>
     ) : null;
@@ -45,7 +43,7 @@ export class HeaderBar extends React.Component {
             <img src={logo} alt="logo" className="logo" />
           </Link>
           <nav role="navigation" className="main-nav">
-            <i className="fas fa-bars" />
+            <NavBurger />
           </nav>
         </header>
         <div className="status-bar">

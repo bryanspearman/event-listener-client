@@ -159,10 +159,43 @@ input:-webkit-autofill:active {
     padding-right: 20px;
     color: #fff;
   }
+  .sml-dropdown-menu {
+    z-index: 1000;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #ed5665;
+    color: #fff;
+    box-shadow: 4px 4px 2px #222;
+    -webkit-box-shadow: 4px 4px 2px #222;
+  }
+
+  .sml-dropdown-menu ul {
+    margin: 40px 0px 10px 20px;
+    list-style-type: none;
+    text-align: left;
+  }
+
+  .sml-dropdown-menu ul li {
+    padding: 10px 0px;
+  }
+
+  .sml-dropdown-menu a:hover {
+    color: #ad2734;
+  }
+
+  .burger {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
 
   .status-bar {
     position: relative;
-    padding: 8px 8px 12px 20px;
+    padding: 10px 8px 0px 20px;
     height: 40px;
     background-color: #323232;
     color: #fff;
@@ -175,7 +208,7 @@ input:-webkit-autofill:active {
 
   .addEvent {
     color: #fff;
-    margin: 0 10px;
+    margin: 20px 10px 0px 10px;
   }
 
   /* Landing Page - Login - Sign Up */
@@ -424,7 +457,7 @@ input:-webkit-autofill:active {
     font-size: 14px;
     margin: 5px;
     padding: 5px;
-    border-top: 1px dotted #f2f2f2;
+    border-top: 1px dotted #444;
   }
 
   footer {
@@ -456,6 +489,31 @@ input:-webkit-autofill:active {
     padding-top: 5px;
     padding-right: 20px;
     color: #fff;
+  }
+
+  .sml-dropdown-menu {
+    z-index: 1000;
+    width: 200px;
+    text-align: left;
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    background-color: #ed5665;
+    color: #fff;
+  }
+
+  .sml-dropdown-menu ul {
+    margin: 40px 0px 10px 20px;
+    list-style-type: none;
+    text-align: left;
+  }
+
+  .sml-dropdown-menu ul li {
+    padding: 10px 0px;
+  }
+
+  .sml-dropdown-menu a:hover {
+    color: #ad2734;
   }
 
   .list-nav {
