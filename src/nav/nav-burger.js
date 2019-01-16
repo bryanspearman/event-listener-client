@@ -22,7 +22,7 @@ export class NavBurger extends Component {
             <li>Login</li>
           </Link>
           <Link to="/about">
-            <li>About Us</li>
+            <li>About</li>
           </Link>
         </ul>
       </React.Fragment>
@@ -39,13 +39,13 @@ export class NavBurger extends Component {
 
           <Link to="/about">
             <li>
-              <i className="fas fa-info-circle" /> About Us
+              <i className="fas fa-info-circle" /> About
             </li>
           </Link>
 
           <Link to="/contact">
             <li>
-              <i className="fas fa-envelope" /> Contact Us
+              <i className="fas fa-envelope" /> Contact
             </li>
           </Link>
 

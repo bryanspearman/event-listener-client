@@ -5,8 +5,7 @@ import { connect } from 'react-redux';
 
 export class Sidebar extends React.Component {
   static propTypes = {
-    itemList: PropTypes.array.isRequired,
-    setSelectedItem: PropTypes.func.isRequired
+    itemList: PropTypes.array.isRequired
   };
 
   sortItems(itemList) {

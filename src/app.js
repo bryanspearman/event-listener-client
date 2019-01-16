@@ -7,6 +7,7 @@ import RegistrationPage from './auth/registration-page';
 import LoginPage from './auth/login-page';
 import Dashboard from './home/dashboard';
 import AboutPage from './about/about-page';
+import ContactPage from './contact/contact-page';
 
 import { refreshAuthToken } from './auth/auth-actions';
 
@@ -45,6 +46,7 @@ export class App extends Component {
         <Route exact path="/register" component={RegistrationPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/about" component={AboutPage} />
+        <Route exact path="/contact" component={ContactPage} />
         <Route path="/dashboard" component={Dashboard} />
       </div>
     );

@@ -24,10 +24,7 @@ export class Dashboard extends React.Component {
         <div className="dashboard">
           <HeaderBar />
           <main role="main">
-            <Sidebar
-              itemList={this.props.itemList}
-              setSelectedItem={this.props.selectItem}
-            />
+            <Sidebar itemList={this.props.itemList} />
             <div className="info-view">
               <Route exact path="/dashboard" component={SplashView} />
               <Route

@@ -49,6 +49,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  padding: 10px 0px;
+  line-height: 22px;
+}
+
 a:hover {
   color: #ed5665;
 }
@@ -214,8 +219,19 @@ input:-webkit-autofill:active {
   /* Landing Page - Login - Sign Up */
   .main {
     min-height: 100vh;
-    background-color: rgb(43, 140, 150, 0.8);
+    background-color: rgb(43, 139, 150);
     position: relative;
+  }
+
+  .main-content {
+    color: #222;
+    text-align: left;
+    background-color: #86d0d5;
+    padding: 40px 50px;
+  }
+
+  .main-content ul {
+    margin-left: 40px;
   }
 
   .home {
