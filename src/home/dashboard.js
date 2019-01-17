@@ -8,9 +8,10 @@ import Sidebar from '../ui/sidebar';
 import SplashView from './splashView';
 import CreateItemView from '../items/create/createItemView';
 import EditItemView from '../items/edit/editItemView';
+import DeleteItemView from '../items/delete/deleteItemView';
 import ItemDetails from '../items/details/itemDetails';
 
-import { getItems, selectItem } from '../items/item-actions';
+import { getItems } from '../items/item-actions';
 
 export class Dashboard extends React.Component {
   componentDidMount() {
@@ -18,7 +19,6 @@ export class Dashboard extends React.Component {
   }
 
   render() {
-    // const setSelectedItem = item => this.props.selectItem(item);
     return (
       <div className="row">
         <div className="dashboard">
@@ -42,6 +42,11 @@ export class Dashboard extends React.Component {
                 path="/dashboard/edit/:id"
                 component={EditItemView}
               />
+              <Route
+                exact
+                path="/dashboard/delete/:id"
+                component={DeleteItemView}
+              />
             </div>
           </main>
         </div>
@@ -57,8 +62,7 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = {
-  getItems,
-  selectItem
+  getItems
 };
 
 export default requiresLogin()(

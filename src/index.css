@@ -602,6 +602,17 @@ input:-webkit-autofill:active {
   .clock-labels td {
     margin-top: -20px;
   }
+
+  .warning {
+    font-size: 30px;
+    color: #da4c5a;
+    margin-bottom: 20px;
+  }
+
+  .dim {
+    margin-top: 40px;
+    color: #e0e0e0;
+  }
 }
 
 /* **************  800 to 1024 ******************* */

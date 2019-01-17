@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import CounterView from '../../counter/counterView';
-import { getItem, deleteItem } from '../item-actions';
+import { getItem, getItems, deleteItem } from '../item-actions';
 
-export class ItemDetails extends React.Component {
+export class DeleteItemView extends React.Component {
   componentDidMount() {
     this.props.getItem(this.props.match.params.id);
   }
@@ -20,6 +20,10 @@ export class ItemDetails extends React.Component {
     return !!(testDate.getTime() < now.getTime());
   }
 
+  deleteItem(itemId) {
+    this.props.deleteItem(itemId).then(() => this.props.getItems());
+  }
+
   render() {
     const { selectedItem } = this.props;
     if (!selectedItem) {
@@ -30,21 +34,28 @@ export class ItemDetails extends React.Component {
 
     return (
       <div id="item-details">
-        <h1>{selectedItem.itemTitle}</h1>
-        <CounterView targetDate={itemDate.toDateString()} />
-        <span>{dateIsInPast ? 'Since: ' : 'Until: '}</span>
-        <span className="item-date">{itemDate.toDateString()}</span>
-        <div className="details-btns">
-          <Link to={`/dashboard/edit/${selectedItem.id}`}>
-            <button className="xsml-blu">Edit</button>
-          </Link>
-          <Link to={`/dashboard/delete/${selectedItem.id}`}>
-            <button className="xsml-red">Delete</button>
-          </Link>
-        </div>
-        <div className="item-notes">
-          <h2>Notes</h2>
-          <p>{selectedItem.itemNotes}</p>
+        <div className="warning">Are you sure you want to delete?</div>
+        <Link to="/dashboard">
+          <button className="sml-blu">Cancel</button>
+        </Link>
+
+        <Link to="#">
+          <button
+            className="sml-red"
+            onClick={() => this.props.deleteItem(selectedItem.id)}
+          >
+            DELETE
+          </button>
+        </Link>
+        <div className="dim">
+          <h1>{selectedItem.itemTitle}</h1>
+          <CounterView targetDate={itemDate.toDateString()} />
+          <span>{dateIsInPast ? 'Since: ' : 'Until: '}</span>
+          <span>{itemDate.toDateString()}</span>
+          <div>
+            <h2>Notes</h2>
+            <p>{selectedItem.itemNotes}</p>
+          </div>
         </div>
       </div>
     );
@@ -57,10 +68,11 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getItem,
+  getItems,
   deleteItem
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ItemDetails);
+)(DeleteItemView);
