@@ -200,7 +200,7 @@ input:-webkit-autofill:active {
 
   .status-bar {
     position: relative;
-    padding: 10px 8px 0px 20px;
+    padding: 8px 8px 10px 30px;
     height: 40px;
     background-color: #323232;
     color: #fff;
@@ -208,6 +208,7 @@ input:-webkit-autofill:active {
   }
 
   .add-btn {
+    padding: 8px 8px 10px 20px;
     color: #ed5665;
   }
 
@@ -224,10 +225,18 @@ input:-webkit-autofill:active {
   }
 
   .main-content {
-    color: #222;
+    color: #4a4a4a;
     text-align: left;
-    background-color: #86d0d5;
+    background-color: #f2f2f2;
     padding: 40px 50px;
+  }
+
+  .main-content a {
+    color: #ed5665;
+  }
+
+  .main-content a:hover {
+    color: #ed5665;
   }
 
   .main-content ul {
@@ -238,8 +247,6 @@ input:-webkit-autofill:active {
     display: table-cell;
     width: 100%;
     vertical-align: top;
-    background-image: url(./ui/images/splash.jpg);
-    background-size: cover;
     text-align: center;
     margin: 0 auto;
     position: relative;
@@ -505,6 +512,23 @@ input:-webkit-autofill:active {
     padding-top: 5px;
     padding-right: 20px;
     color: #fff;
+  }
+
+  .main {
+    min-height: 100vh;
+    background-color: rgb(43, 139, 150, 0.8);
+    position: relative;
+  }
+
+  .home {
+    display: table-cell;
+    width: 100%;
+    vertical-align: top;
+    background-image: url(./ui/images/splash_sml.jpg);
+    background-size: cover;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
   }
 
   .sml-dropdown-menu {

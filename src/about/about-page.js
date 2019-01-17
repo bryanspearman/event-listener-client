@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import HeaderBar from '../nav/header-bar';
 
@@ -34,20 +34,20 @@ export default class AboutPage extends React.Component {
                 and back end are deployed with Heroku and the database is an
                 mLab.
               </p>
-              <Route
-                exact
-                path="/bryanspearman"
-                component={() => {
-                  window.location = 'https://bryanspearman.info';
-                  return null;
-                }}
-              />
               <p>
                 I designed, coded and implemented every aspect of the app and it
                 was a lot of fun. If you'd like to see more of my projects
-                please visit my portfolio site{' '}
-                <Link to="/bryanspearman">here</Link>. I'm always for hire so if
-                you're looking for project partner or a sub-contractor please
+                please visit my portfolio site
+                <a
+                  href="https://bryanspearman.info"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {' '}
+                  here
+                </a>
+                . I'm always for hire so if you're looking for project partner
+                or a sub-contractor please
                 <Link to="/contact"> drop me a line.</Link>
               </p>
             </div>
