@@ -604,7 +604,8 @@ input:-webkit-autofill:active {
   }
 
   .warning {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
     color: #da4c5a;
     margin-bottom: 20px;
   }

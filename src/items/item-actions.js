@@ -172,10 +172,15 @@ export const deleteItem = itemId => (dispatch, getState) => {
   dispatch(deleteItemAction(itemId));
   return fetch(`${API_BASE_URL}/items/${itemId}`, {
     method: 'DELETE',
-    Authorization: `Bearer ${authToken}`
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+      Authorization: `Bearer ${authToken}`
+    }
   })
     .then(res => normalizeResponseErrors(res))
-    .then(() => dispatch(deleteItemSuccessAction()))
+    .then(() => {
+      dispatch(deleteItemSuccessAction());
+    })
     .catch(err => {
       console.error(err);
       dispatch(deleteItemFailureAction(err));

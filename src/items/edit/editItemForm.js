@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import moment from 'moment';
 
@@ -34,6 +35,9 @@ export const EditItemForm = props => {
         />
       </label>
       <br />
+      <Link to={`/dashboard/details/${props.itemId}`}>
+        <button className="sml-red">Cancel</button>
+      </Link>
       <input type="submit" value="Save" />
     </form>
   );
