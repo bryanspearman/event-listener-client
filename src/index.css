@@ -44,6 +44,12 @@ body {
   color: #fff;
 }
 
+.center {
+  text-align: center;
+  margin: 0px auto;
+  position: relative;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -74,7 +80,7 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #333333 !important;
 }
 
-/* **************  up to 600px ******************* */
+/* **************  up to 630px ******************* */
 @media only screen and (min-width: 100px) {
   input[type='text'],
   input[type='password'],
@@ -127,10 +133,10 @@ input:-webkit-autofill:active {
 
   input[type='submit'] {
     cursor: pointer;
-    font-size: 16px;
-    width: 85px;
-    padding: 8px;
-    margin: 4px 10px 8px 10px;
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 10px 8px 10px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -154,7 +160,7 @@ input:-webkit-autofill:active {
 
   .logo {
     position: absolute;
-    left: 40px;
+    left: 20px;
   }
 
   .main-nav {
@@ -164,6 +170,7 @@ input:-webkit-autofill:active {
     padding-right: 20px;
     color: #fff;
   }
+
   .sml-dropdown-menu {
     z-index: 1000;
     width: 50%;
@@ -208,7 +215,7 @@ input:-webkit-autofill:active {
   }
 
   .add-btn {
-    padding: 8px 8px 10px 20px;
+    padding: 8px 8px 10px 0px;
     color: #ed5665;
   }
 
@@ -294,7 +301,7 @@ input:-webkit-autofill:active {
     font-size: 13px;
     width: 65px;
     padding: 4px;
-    margin: 0px 4px 8px 20px;
+    margin: 0px 5px 8px 0px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -308,10 +315,10 @@ input:-webkit-autofill:active {
   }
 
   .sml-red {
-    font-size: 16px;
-    width: 85px;
-    padding: 8px;
-    margin: 4px 10px 8px 10px;
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 7px 10px 8px 10px;
     background-color: #ed5665;
     border: 1px solid #f76775;
     color: #fff;
@@ -337,10 +344,10 @@ input:-webkit-autofill:active {
   }
 
   .sml-blu {
-    font-size: 16px;
-    width: 85px;
-    padding: 8px;
-    margin: 4px 10px 8px 10px;
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 10px 8px 0px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -352,7 +359,7 @@ input:-webkit-autofill:active {
     font-size: 16px;
     width: 200px;
     padding: 8px;
-    margin: 40px 0 20px 0;
+    margin: 20px 0px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -436,12 +443,16 @@ input:-webkit-autofill:active {
 
   .info-view {
     position: relative;
+    min-height: 100vh;
+    vertical-align: top;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    color: #4a4a4a;
   }
+
   .info-view form {
     text-align: left;
     color: #222;
-    padding: 0 40px;
-    margin: 0 auto;
     position: relative;
   }
 
@@ -451,11 +462,17 @@ input:-webkit-autofill:active {
   }
 
   .info-view h1 {
-    margin-bottom: 20px;
+    margin: 5px 0px;
   }
 
-  .item-notes {
-    margin-top: 20px;
+  .info-view h2 {
+    margin-top: 10px;
+  }
+
+  .item-date {
+    color: #da4c5a;
+    font-weight: bold;
+    margin: 10px 0px;
   }
 
   .counter {
@@ -471,7 +488,7 @@ input:-webkit-autofill:active {
   .clock-number {
     text-align: center;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 30px;
     margin: 5px 10px 0px 10px;
   }
 
@@ -481,6 +498,17 @@ input:-webkit-autofill:active {
     margin: 5px;
     padding: 5px;
     border-top: 1px dotted #444;
+  }
+
+  .splash {
+    display: none;
+  }
+  .dim {
+    margin-top: 40px;
+    color: #e0e0e0;
+  }
+  .details-btns {
+    padding: 0px;
   }
 
   footer {
@@ -494,12 +522,123 @@ input:-webkit-autofill:active {
   }
 }
 /* **************  600 to 800px ******************* */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 630px) {
   .constrain {
     padding: 30px 70px;
     color: #fff;
     text-shadow: 1px 1px 2px #000000;
     font-size: 2em;
+  }
+
+  input[type='submit'] {
+    cursor: pointer;
+    font-size: 16px;
+    width: 85px;
+    padding: 8px;
+    margin: 4px 10px 8px 10px;
+    background-color: #32abb8;
+    border: solid 1px #43c7d6;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: 0.2s;
+  }
+
+  input[type='submit']:hover {
+    background-color: #38a5b1;
+    color: #104349;
+  }
+
+  .xsml-red {
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 10px 8px 10px;
+    background-color: #ed5665;
+    border: 1px solid #f76775;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .xsml-red:hover {
+    background-color: #da4c5a;
+    color: #6e1e26;
+  }
+
+  .xsml-blu {
+    font-size: 13px;
+    width: 65px;
+    padding: 4px;
+    margin: 0px 5px 8px 0px;
+    background-color: #32abb8;
+    border: solid 1px #43c7d6;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .xsml-blu:hover {
+    background-color: #38a5b1;
+    color: #104349;
+  }
+
+  .sml-red {
+    font-size: 16px;
+    width: 85px;
+    padding: 8px;
+    margin: 4px 10px 8px 10px;
+    background-color: #ed5665;
+    border: 1px solid #f76775;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .lrg-red {
+    font-size: 16px;
+    width: 200px;
+    padding: 8px;
+    margin: 40px 0 20px 0;
+    background-color: #ed5665;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .sml-red:hover,
+  .lrg-red:hover {
+    background-color: #da4c5a;
+    color: #6e1e26;
+  }
+
+  .sml-blu {
+    font-size: 16px;
+    width: 85px;
+    padding: 8px;
+    margin: 4px 10px 8px 10px;
+    background-color: #32abb8;
+    border: solid 1px #43c7d6;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .lrg-blu {
+    font-size: 16px;
+    width: 200px;
+    padding: 8px;
+    margin: 40px auto;
+    background-color: #32abb8;
+    border: solid 1px #43c7d6;
+    color: #fff;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+  }
+
+  .sml-blu:hover,
+  .lrg-blu:hover {
+    background-color: #38a5b1;
+    color: #104349;
   }
 
   .add-btn {
@@ -578,6 +717,52 @@ input:-webkit-autofill:active {
     margin-bottom: 40px;
   }
 
+  .info-view form {
+    text-align: left;
+    color: #222;
+    padding: 0 40px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .info-view label {
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  .info-view h1 {
+    margin-bottom: 20px;
+  }
+
+  .item-notes {
+    margin-top: 20px;
+  }
+
+  .counter {
+    margin: 30px 0px;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .clock-number {
+    text-align: center;
+    font-weight: bold;
+    font-size: 45px;
+    margin: 5px 10px 0px 10px;
+  }
+
+  .number-label {
+    text-align: center;
+    font-size: 14px;
+    margin: 5px;
+    padding: 5px;
+    border-top: 1px dotted #444;
+  }
+
   .details-btns {
     display: flex;
     float: right;
@@ -585,6 +770,7 @@ input:-webkit-autofill:active {
 
   .item-date {
     color: #da4c5a;
+    width: 60%;
     font-weight: bold;
   }
 

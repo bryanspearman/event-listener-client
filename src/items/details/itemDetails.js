@@ -35,10 +35,10 @@ export class ItemDetails extends React.Component {
       <div id="item-details">
         <h1>{selectedItem.itemTitle}</h1>
         <CounterView targetDate={itemDate.toDateString()} />
-        <span>{dateIsInPast ? 'Since: ' : 'Until: '}</span>
-        <span className="item-date">
-          {momentDate.format('dddd, MMMM Do YYYY')}
-        </span>
+        <div>{dateIsInPast ? 'Since: ' : 'Until: '}</div>
+        <div className="item-date">
+          {momentDate.format('ddd, MMMM Do YYYY')}
+        </div>
         <div className="details-btns">
           <Link to={`/dashboard/edit/${selectedItem.id}`}>
             <button className="xsml-blu">Edit</button>

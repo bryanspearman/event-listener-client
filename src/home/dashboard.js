@@ -29,10 +29,10 @@ export class Dashboard extends React.Component {
 
   render() {
     const isHomeDashboard = !!this.props.match.isExact;
-    const isMobileView = this.state.screenWidth && this.state.screenWidth < 500;
+    const isMobileView = this.state.screenWidth && this.state.screenWidth < 630;
     const shouldShowSidebar = isMobileView ? isHomeDashboard : true;
     return (
-      <div className="row">
+      <div id="top" className="row">
         <div className="dashboard">
           <HeaderBar />
           <main role="main">

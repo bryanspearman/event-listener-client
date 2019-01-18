@@ -36,7 +36,7 @@ export const EditItemForm = props => {
       </label>
       <br />
       <Link to={`/dashboard/details/${props.itemId}`}>
-        <button className="sml-red">Cancel</button>
+        <button className="xsml-red">Cancel</button>
       </Link>
       <input type="submit" value="Save" />
     </form>

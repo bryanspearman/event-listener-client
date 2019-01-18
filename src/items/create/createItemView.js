@@ -20,7 +20,7 @@ export class CreateItemView extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Create a New Event</h1>
+        <h1>Create Event</h1>
         <CreateItemForm onSubmit={this.createItem.bind(this)} />
       </React.Fragment>
     );

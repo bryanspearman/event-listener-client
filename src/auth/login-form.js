@@ -33,15 +33,17 @@ export class LoginForm extends React.Component {
           id="password"
           validate={[required, nonEmpty]}
         />
-        <button
-          className="lrg-blu"
-          disabled={this.props.pristine || this.props.submitting}
-        >
-          Login
-        </button>
-        <p className="sml-txt">
-          Need an account? <Link to="/register">Sign Up</Link>
-        </p>
+        <div className="center">
+          <button
+            className="lrg-blu"
+            disabled={this.props.pristine || this.props.submitting}
+          >
+            Login
+          </button>
+          <p className="sml-txt">
+            Need an account? <Link to="/register">Sign Up</Link>
+          </p>
+        </div>
       </form>
     );
   }

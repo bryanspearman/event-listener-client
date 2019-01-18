@@ -46,7 +46,7 @@ export class DeleteItemView extends React.Component {
     return (
       <div id="item-details">
         <div id="warning" className="warning">
-          Are you sure you want to delete?
+          <p>Are you sure you want to delete?</p>
         </div>
         <Link to={`/dashboard/details/${this.props.selectedItem.id}`}>
           <button className="sml-blu">Cancel</button>

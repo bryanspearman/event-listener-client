@@ -35,16 +35,18 @@ export class RegistrationForm extends React.Component {
           name="passwordConfirm"
           validate={[required, nonEmpty, matchesPassword]}
         />
-        <button
-          className="lrg-blu"
-          type="submit"
-          disabled={this.props.pristine || this.props.submitting}
-        >
-          Sign Up
-        </button>
-        <p className="sml-txt">
-          Already use Event Listner? <Link to="/login">Login here</Link>
-        </p>
+        <div className="center">
+          <button
+            className="lrg-blu"
+            type="submit"
+            disabled={this.props.pristine || this.props.submitting}
+          >
+            Sign Up
+          </button>
+          <p className="sml-txt">
+            Already use Event Listner? <Link to="/login">Login here</Link>
+          </p>
+        </div>
       </form>
     );
   }

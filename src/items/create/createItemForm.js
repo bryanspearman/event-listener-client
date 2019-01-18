@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 export const CreateItemForm = props => {
   return (
@@ -32,6 +33,9 @@ export const CreateItemForm = props => {
         />
       </label>
       <br />
+      <Link to={'/dashboard#top'}>
+        <button className="sml-red">Cancel</button>
+      </Link>
       <input type="submit" value="Save" />
     </form>
   );

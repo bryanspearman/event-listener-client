@@ -27,7 +27,7 @@ export class EditItemView extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Editing Event</h1>
+        <h1>Edit This Event</h1>
         <EditItemForm
           onSubmit={this.updateItem.bind(this)}
           itemId={this.props.match.params.id}
