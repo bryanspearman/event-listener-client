@@ -81,7 +81,7 @@ input:-webkit-autofill:active {
 }
 
 /* **************  up to 630px ******************* */
-@media only screen and (min-width: 100px) {
+@media only screen and (min-width: 300px) {
   input[type='text'],
   input[type='password'],
   input[type='date'] {
@@ -282,9 +282,10 @@ input:-webkit-autofill:active {
 
   .xsml-red {
     font-size: 13px;
-    width: 65px;
+    width: 50px;
     padding: 4px;
-    margin: 0px 10px 8px 10px;
+    margin-bottom: 8px;
+    margin-right: 3px;
     background-color: #ed5665;
     border: 1px solid #f76775;
     color: #fff;
@@ -299,9 +300,10 @@ input:-webkit-autofill:active {
 
   .xsml-blu {
     font-size: 13px;
-    width: 65px;
+    width: 50px;
     padding: 4px;
-    margin: 0px 5px 8px 0px;
+    margin-bottom: 8px;
+    margin-right: 3px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -318,7 +320,7 @@ input:-webkit-autofill:active {
     font-size: 13px;
     width: 65px;
     padding: 4px;
-    margin: 7px 10px 8px 10px;
+    margin: 7px 5px 8px 10px;
     background-color: #ed5665;
     border: 1px solid #f76775;
     color: #fff;
@@ -330,7 +332,7 @@ input:-webkit-autofill:active {
     font-size: 16px;
     width: 200px;
     padding: 8px;
-    margin: 40px 0 20px 0;
+    margin: 20px 0px;
     background-color: #ed5665;
     color: #fff;
     -webkit-transition: color 0.2s;
@@ -347,7 +349,7 @@ input:-webkit-autofill:active {
     font-size: 13px;
     width: 65px;
     padding: 4px;
-    margin: 0px 10px 8px 0px;
+    margin: 0px 5px 8px 0px;
     background-color: #32abb8;
     border: solid 1px #43c7d6;
     color: #fff;
@@ -442,9 +444,6 @@ input:-webkit-autofill:active {
   }
 
   .info-view {
-    position: relative;
-    min-height: 100vh;
-    vertical-align: top;
     background-color: #f2f2f2;
     padding: 10px 20px;
     color: #4a4a4a;
@@ -508,7 +507,8 @@ input:-webkit-autofill:active {
     color: #e0e0e0;
   }
   .details-btns {
-    padding: 0px;
+    display: flex;
+    float: right;
   }
 
   footer {
@@ -521,7 +521,7 @@ input:-webkit-autofill:active {
     width: 100%;
   }
 }
-/* **************  600 to 800px ******************* */
+/* **************  630 to 800px ******************* */
 @media only screen and (min-width: 630px) {
   .constrain {
     padding: 30px 70px;
@@ -720,7 +720,6 @@ input:-webkit-autofill:active {
   .info-view form {
     text-align: left;
     color: #222;
-    padding: 0 40px;
     margin: 0 auto;
     position: relative;
   }
