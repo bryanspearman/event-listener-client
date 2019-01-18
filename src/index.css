@@ -435,7 +435,7 @@ input:-webkit-autofill:active {
   }
 
   .info-view {
-    display: none;
+    position: relative;
   }
   .info-view form {
     text-align: left;
