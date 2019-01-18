@@ -14,17 +14,31 @@ import ItemDetails from '../items/details/itemDetails';
 import { getItems } from '../items/item-actions';
 
 export class Dashboard extends React.Component {
+  state = {
+    screenWidth: null
+  };
+
   componentDidMount() {
     this.props.getItems();
+    const screenWidth = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+    this.setState({ screenWidth });
   }
 
   render() {
+    const isHomeDashboard = !!this.props.match.isExact;
+    const isMobileView = this.state.screenWidth && this.state.screenWidth < 500;
+    const shouldShowSidebar = isMobileView ? isHomeDashboard : true;
     return (
       <div className="row">
         <div className="dashboard">
           <HeaderBar />
           <main role="main">
-            <Sidebar itemList={this.props.itemList} />
+            {shouldShowSidebar ? (
+              <Sidebar itemList={this.props.itemList} />
+            ) : null}
             <div className="info-view">
               <Route exact path="/dashboard" component={SplashView} />
               <Route

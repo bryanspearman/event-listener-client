@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import 'moment-timezone';
 
 import CounterView from '../../counter/counterView';
 import { getItem, deleteItem } from '../item-actions';
@@ -27,13 +29,16 @@ export class ItemDetails extends React.Component {
     }
     const itemDate = new Date(selectedItem.itemDate);
     const dateIsInPast = this.dateIsInPast(itemDate);
+    const momentDate = new moment(selectedItem.itemDate).utc();
 
     return (
       <div id="item-details">
         <h1>{selectedItem.itemTitle}</h1>
         <CounterView targetDate={itemDate.toDateString()} />
         <span>{dateIsInPast ? 'Since: ' : 'Until: '}</span>
-        <span className="item-date">{itemDate.toDateString()}</span>
+        <span className="item-date">
+          {momentDate.format('dddd, MMMM Do YYYY')}
+        </span>
         <div className="details-btns">
           <Link to={`/dashboard/edit/${selectedItem.id}`}>
             <button className="xsml-blu">Edit</button>
