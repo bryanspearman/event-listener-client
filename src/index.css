@@ -31,6 +31,7 @@ html {
   margin: 0px;
   padding: 0px;
   background-color: #222;
+  height: 100% !important;
 }
 
 body {
@@ -80,7 +81,7 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #333333 !important;
 }
 
-/* **************  up to 630px ******************* */
+/* **************  up to 640px ******************* */
 @media only screen and (min-width: 300px) {
   input[type='text'],
   input[type='password'],
@@ -235,7 +236,7 @@ input:-webkit-autofill:active {
     color: #4a4a4a;
     text-align: left;
     background-color: #f2f2f2;
-    padding: 40px 50px;
+    padding: 30px;
   }
 
   .main-content a {
@@ -447,6 +448,7 @@ input:-webkit-autofill:active {
     background-color: #f2f2f2;
     padding: 10px 20px;
     color: #4a4a4a;
+    height: 100%;
   }
 
   .info-view form {
@@ -499,9 +501,24 @@ input:-webkit-autofill:active {
     border-top: 1px dotted #444;
   }
 
+  .close {
+    float: right;
+    width: 30px;
+  }
+
+  .close i {
+    color: #ed5665;
+  }
+
+  .icon {
+    color: #4a4a4a;
+    margin-right: 10px;
+  }
+
   .splash {
     display: none;
   }
+
   .dim {
     margin-top: 40px;
     color: #e0e0e0;
@@ -521,8 +538,8 @@ input:-webkit-autofill:active {
     width: 100%;
   }
 }
-/* **************  630 to 800px ******************* */
-@media only screen and (min-width: 630px) {
+/* **************  640 to 800px ******************* */
+@media only screen and (min-width: 640px) {
   .constrain {
     padding: 30px 70px;
     color: #fff;
@@ -659,6 +676,13 @@ input:-webkit-autofill:active {
     position: relative;
   }
 
+  .main-content {
+    color: #4a4a4a;
+    text-align: left;
+    background-color: #f2f2f2;
+    padding: 30px 50px;
+  }
+
   .home {
     display: table-cell;
     width: 100%;
@@ -711,6 +735,7 @@ input:-webkit-autofill:active {
     padding: 20px 40px;
     width: 59%;
     color: #4a4a4a;
+    height: 100%;
   }
 
   .info-view header {
@@ -750,7 +775,7 @@ input:-webkit-autofill:active {
   .clock-number {
     text-align: center;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 30px;
     margin: 5px 10px 0px 10px;
   }
 
@@ -778,21 +803,18 @@ input:-webkit-autofill:active {
     margin-bottom: 40px;
   }
 
-  .clock-numbers td {
-    font-size: 55px;
-    font-weight: bold;
-    border-bottom: 1px solid #4a4a4a;
-  }
-
-  .clock-labels td {
-    margin-top: -20px;
-  }
-
   .warning {
     font-size: 25px;
     font-weight: bold;
     color: #da4c5a;
     margin-bottom: 20px;
+  }
+  .close {
+    display: none;
+  }
+
+  .splash {
+    display: block;
   }
 
   .dim {
@@ -811,11 +833,44 @@ input:-webkit-autofill:active {
   }
 
   .home {
-    width: 782px;
+    width: 900px;
   }
 
   .dashboard {
-    width: 782px;
+    width: 900px;
+  }
+  .list-nav {
+    position: relative;
+    display: table-cell;
+    min-height: 100vh;
+    width: 250px;
+  }
+
+  .info-view {
+    position: relative;
+    display: table-cell;
+    min-height: 100vh;
+    vertical-align: top;
+    background-color: #f2f2f2;
+    padding: 20px 40px;
+    width: 610px;
+    color: #4a4a4a;
+    height: 100%;
+  }
+
+  .clock-number {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 5px 10px 0px 10px;
+  }
+
+  .number-label {
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+    border-top: 1px dotted #444;
   }
 }
 

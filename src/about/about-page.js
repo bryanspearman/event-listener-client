@@ -12,9 +12,9 @@ export default class AboutPage extends React.Component {
           <main role="main" className="main">
             <div className="main-content">
               <h1>About</h1>
-              <h2>
-                <em>Hi I'm Bryan!</em>
-              </h2>
+              <p>
+                <em>Hi I'm Bryan,</em>
+              </p>
               <p>
                 I'm a web developer based out of Greenville, South Carolina. I
                 enjoy designing little apps like this as a means of continued
@@ -35,9 +35,8 @@ export default class AboutPage extends React.Component {
                 mLab.
               </p>
               <p>
-                I designed, coded and implemented every aspect of the app and it
-                was a lot of fun. If you'd like to see more of my projects
-                please visit my portfolio site
+                If you'd like to see more of my projects please visit my
+                portfolio site
                 <a
                   href="https://bryanspearman.info"
                   target="_blank"

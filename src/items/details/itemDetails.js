@@ -32,7 +32,12 @@ export class ItemDetails extends React.Component {
     const momentDate = new moment(selectedItem.itemDate).utc();
 
     return (
-      <div id="item-details">
+      <div className="item-details">
+        <div className="close">
+          <Link to={'/dashboard#top'}>
+            <i className="fas fa-times-circle fa-2x" />
+          </Link>
+        </div>
         <h1>{selectedItem.itemTitle}</h1>
         <CounterView targetDate={itemDate.toDateString()} />
         <div>{dateIsInPast ? 'Since: ' : 'Until: '}</div>
@@ -40,11 +45,15 @@ export class ItemDetails extends React.Component {
           {momentDate.format('ddd, MMMM Do YYYY')}
         </span>
         <div className="details-btns">
-          <Link to={`/dashboard/edit/${selectedItem.id}`}>
-            <button className="xsml-blu">Edit</button>
+          <Link to={`/dashboard/edit/${selectedItem.id}`} title="Edit">
+            <span className="icon">
+              <i className="fas fa-edit" />
+            </span>
           </Link>
           <Link to={`/dashboard/delete/${selectedItem.id}`}>
-            <button className="xsml-red">Delete</button>
+            <span className="icon">
+              <i className="fas fa-trash-alt" />
+            </span>
           </Link>
         </div>
         <div className="item-notes">
