@@ -9,6 +9,7 @@ describe('Item Reducer', () => {
     selectedItem: null
   };
 
+  // REQUESTS
   describe('REQUEST', () => {
     it('CREATE_ITEM_REQUEST', () => {
       const item = {};
@@ -48,6 +49,7 @@ describe('Item Reducer', () => {
     });
   });
 
+  // ERRORS
   describe('FAILURE', () => {
     it('GET_ITEMS_FAILURE', () => {
       const error = { message: 'Whooops!' };
@@ -57,6 +59,83 @@ describe('Item Reducer', () => {
       );
       expect(newState.loading).toBeFalsy();
       expect(newState.error).toEqual(error);
+    });
+
+    it('CREATE_ITEM_FAILURE', () => {
+      const error = { message: 'Whooops!' };
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.createItemFailureAction(error)
+      );
+      expect(newState.loading).toBeFalsy();
+      expect(newState.error).toEqual(error);
+    });
+
+    it('UPDATE_ITEM_FAILURE', () => {
+      const error = { message: 'Whooops!' };
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.updateItemFailureAction(error)
+      );
+      expect(newState.loading).toBeFalsy();
+      expect(newState.error).toEqual(error);
+    });
+
+    it('DELETE_ITEM_FAILURE', () => {
+      const error = { message: 'Whooops!' };
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.deleteItemFailureAction(error)
+      );
+      expect(newState.loading).toBeFalsy();
+      expect(newState.error).toEqual(error);
+    });
+  });
+
+  // SUCCESSES
+  describe('SUCCESS', () => {
+    it('GET_ITEMS_SUCCESS', () => {
+      const items = [];
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.getItemsSuccessAction(items)
+      );
+      expect(newState.loading).toBeFalsy();
+      expect(newState.itemList).toEqual(items);
+    });
+
+    it('GET_ITEM_SUCCESS', () => {
+      const item = {};
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.getItemSuccessAction(item)
+      );
+      expect(newState.loading).toBeFalsy();
+      expect(newState.selectedItem).toEqual(item);
+    });
+
+    it('CREATE_ITEM_SUCCESS', () => {
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.createItemSuccessAction()
+      );
+      expect(newState.loading).toBeFalsy();
+    });
+
+    it('UPDATE_ITEM_SUCCESS', () => {
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.updateItemSuccessAction()
+      );
+      expect(newState.loading).toBeFalsy();
+    });
+
+    it('DELETE_ITEM_SUCCESS', () => {
+      const newState = itemReducer(
+        INITIAL_STATE,
+        ItemActions.deleteItemSuccessAction()
+      );
+      expect(newState.loading).toBeFalsy();
     });
   });
 });
