@@ -4,4 +4,10 @@ cache:
   directories:
     - node_modules
 env:
-  - CI=true
+    - CI=true
+
+  deploy:
+  provider: heroku
+  edge: true
+  api_key:
+    secure: ad0c5d35-c3b9-48af-b19b-faf7b0739ccf
