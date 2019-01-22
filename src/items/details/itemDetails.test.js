@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Moment from 'moment';
+import 'moment-timezone';
 import { ItemDetails } from './itemDetails';
 
 describe('itemDetails.js', () => {
@@ -40,9 +41,9 @@ describe('itemDetails.js', () => {
     expect(wrapper.find('.item-notes > p').text()).toEqual(
       selectedItemMock.itemNotes
     );
-    const expectedDate = new Moment(selectedItemMock.itemDate).format(
-      'ddd, MMMM Do YYYY'
-    );
+    const expectedDate = new Moment(selectedItemMock.itemDate)
+      .utc()
+      .format('ddd, MMMM Do YYYY');
     expect(wrapper.find('.item-date').text()).toEqual(expectedDate);
   });
 
