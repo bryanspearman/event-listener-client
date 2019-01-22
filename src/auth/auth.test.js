@@ -1,5 +1,5 @@
-import * as authActions from '../auth/auth-actions';
-import authReducer from '../redux/auth-reducer';
+import * as authActions from './auth-actions';
+import authReducer from './auth-reducer';
 
 describe('Auth Reducer', function() {
   let intitialState;
