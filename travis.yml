@@ -5,4 +5,3 @@ cache:
     - node_modules
 env:
   - CI=true
-# Do comments work in yml files?  Checking to see...
