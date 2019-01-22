@@ -28,9 +28,9 @@ export class HeaderBar extends React.Component {
     const authLinks = this.props.loggedIn ? (
       <React.Fragment>
         <div className="add-btn">
-          <Link className="addEvent" to="/dashboard/create">
+          <Link to="/dashboard/create">
             <i className="fas fa-plus-circle" />
-            Add Event
+            <span className="addEvent">Add Event</span>
           </Link>
         </div>
       </React.Fragment>

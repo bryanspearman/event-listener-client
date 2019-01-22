@@ -22,8 +22,12 @@ export class SplashView extends React.Component {
           </h2>
           <p>
             Again, <Link to="/dashboard/create">Create an Event</Link> and your
-            "How Long Since" events will be listed under that headeing in the
+            "How Long Since" events will be listed under that heading in the
             sidebar.
+          </p>
+          <p>
+            Finally, once a future event comes to pass, it will automatically be
+            added to the past events list.
           </p>
           <p>Enjoy!</p>
         </div>
