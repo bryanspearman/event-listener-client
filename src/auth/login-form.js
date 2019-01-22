@@ -15,7 +15,7 @@ export class LoginForm extends React.Component {
       );
     }
     return (
-      <form className="login-form" onSubmit={this.props.handleSubmit}>
+      <form className="login-form">
         <div className="error-message">{error}</div>
         <label htmlFor="username">Username</label>
         <Field
@@ -51,5 +51,6 @@ export class LoginForm extends React.Component {
 
 export default reduxForm({
   form: 'login',
-  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus('login', 'username'), errors)
 })(LoginForm);
