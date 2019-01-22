@@ -1,19 +1,26 @@
 # Event Listener [![Build Status](https://travis-ci.com/bryanspearman/event-listener-client.svg?branch=master)](https://travis-ci.com/bryanspearman/event-listener-client)
 
-My super cool description of the app. <br>
+Event Listener lets you count down to upcoming events or see how long its been since a past event. <br>
+
+### Demo Account
+
+Username: demo<br>
+Password: demo456789
 [Try it out]
 
 ## Motivation:
 
-This is a React application that was built to test my knowledge of React, Redux and Node.
+I love countdown apps but I didn't want to create a native app. I wanted a web app. Plus none of the native apps seem to automatically change a future event to a past event when it's date arrives. So I built this one to do exactly that.
 
 ## Screenshots:
 
-<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/lrg-scrns-landingpage.png?raw=true"/>
+<img src="https://github.com/bryanspearman/event-listener-client/blob/master/public/desktop-edit.png"/>
 
-<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/lrg-screens-create.png?raw=true"/>
+<img src="https://github.com/bryanspearman/event-listener-client/blob/master/public/desktop-itemDetails.png"/>
 
-<img src="https://github.com/bryanspearman/biff-assist/blob/master/public/img/sml-scrns-dashboard.png?raw=true"/>
+<img src="https://github.com/bryanspearman/event-listener-client/blob/master/public/mobile-itemDetails.png"/>
+
+<img src="https://github.com/bryanspearman/event-listener-client/blob/master/public/mobile-itemList.png"/>
 
 ## Built With
 
@@ -30,6 +37,8 @@ This is a React application that was built to test my knowledge of React, Redux 
 - Travis
 - Mocha
 - Chai
+- Enzyme
+- Jest
 - CLI
 - GIT
 - GitHub
@@ -40,7 +49,8 @@ This is a React application that was built to test my knowledge of React, Redux 
 
 ## Author
 
-Bryan Spearman
+Bryan Spearman<br>
+&copy;Copyright 2018. All right reserved.
 
 ## Demo
 
