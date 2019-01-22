@@ -9,7 +9,7 @@ const matchesPassword = matches('password');
 export class RegistrationForm extends React.Component {
   render() {
     return (
-      <form className="login-form">
+      <form className="login-form" onSubmit={this.props.handleSubmit}>
         <label htmlFor="firstName">First name</label>
         <Field component={Input} type="text" name="firstName" />
         <label htmlFor="lastName">Last name</label>
