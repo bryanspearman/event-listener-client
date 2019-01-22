@@ -52,7 +52,7 @@ I love countdown apps but I didn't want to create a native app. I wanted a web a
 
 Bryan Spearman<br>
 [Portfolio Site]<br>
-&copy;Copyright 2018. All right reserved.
+&copy;Copyright 2018 Bryan Spearman. All right reserved.
 
 ## Demo
 
