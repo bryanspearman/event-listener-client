@@ -1,4 +1,4 @@
-# Event Listener [![Build Status](https://travis-ci.com/bryanspearman/event-listener.svg?branch=master)](https://travis-ci.com/bryanspearman/event-listener)
+# Event Listener [![Build Status](https://travis-ci.com/bryanspearman/event-listener-client.svg?branch=master)](https://travis-ci.com/bryanspearman/event-listener-client)
 
 My super cool description of the app. <br>
 [Try it out]
