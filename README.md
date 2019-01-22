@@ -28,7 +28,7 @@ I love countdown apps but I didn't want to create a native app. I wanted a web a
 - HTML5
 - CSS3
 - JavaScript ES6
-- jQuery
+- ReactJS
 - NodeJS
 - MongoDB
 - Express
@@ -51,12 +51,15 @@ I love countdown apps but I didn't want to create a native app. I wanted a web a
 ## Author
 
 Bryan Spearman<br>
+bryanspearman.info<br>
 &copy;Copyright 2018. All right reserved.
 
 ## Demo
 
 Username: demo<br>
 Password: demo456789
+
 [Try it out]
 
 [try it out]: https://event-listener-client.herokuapp.com/
+[bryanspearman.info]: https://bryanspearman.info
