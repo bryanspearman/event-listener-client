@@ -51,7 +51,7 @@ I love countdown apps but I didn't want to create a native app. I wanted a web a
 ## Author
 
 Bryan Spearman<br>
-bryanspearman.info<br>
+[Portfolio Site]<br>
 &copy;Copyright 2018. All right reserved.
 
 ## Demo
@@ -62,4 +62,4 @@ Password: demo456789
 [Try it out]
 
 [try it out]: https://event-listener-client.herokuapp.com/
-[bryanspearman.info]: https://bryanspearman.info
+[portfolio site]: https://bryanspearman.info
