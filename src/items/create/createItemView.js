@@ -3,10 +3,13 @@ import { connect } from 'react-redux';
 import requiresLogin from '../../utils/requires-login';
 import CreateItemForm from './createItemForm';
 import { getItems, createItem } from '../item-actions';
+import moment from 'moment';
+import 'moment-timezone';
 
 export class CreateItemView extends React.Component {
   createItem(values) {
-    values.itemDate = new Date(values.itemDate).toISOString();
+    moment.tz.setDefault();
+    values.itemDate = moment(values.itemDate).toISOString();
     this.props
       .createItem({
         item: values

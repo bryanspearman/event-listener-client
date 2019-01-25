@@ -29,7 +29,8 @@ export class ItemDetails extends React.Component {
     }
     const itemDate = new Date(selectedItem.itemDate);
     const dateIsInPast = this.dateIsInPast(itemDate);
-    const momentDate = new moment(selectedItem.itemDate).utc();
+    moment.tz.setDefault();
+    const momentDate = moment(selectedItem.itemDate);
 
     return (
       <div className="item-details">

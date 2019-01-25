@@ -9,9 +9,19 @@ export class RegistrationPage extends React.Component {
   signUp = values => {
     const { firstName, lastName, username, password } = values;
     const user = { firstName, lastName, username, password };
-    this.props.dispatch(registerUser(user)).then(() => {
-      this.props.history.push('/login');
-    });
+    this.props
+      .dispatch(registerUser(user))
+      .then(() => {
+        if (this.props.error) {
+          return alert('An error occurred');
+        }
+        this.props.history.push('/login');
+      })
+      .catch(() => {
+        if (this.props.error) {
+          alert('An error occurred');
+        }
+      });
   };
 
   render() {
@@ -34,7 +44,8 @@ export class RegistrationPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  error: state.auth.error
 });
 
 export default connect(mapStateToProps)(RegistrationPage);

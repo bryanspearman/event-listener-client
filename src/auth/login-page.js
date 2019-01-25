@@ -7,7 +7,21 @@ import HeaderBar from '../nav/header-bar';
 
 export class LoginPage extends React.Component {
   userLogin = values => {
-    this.props.dispatch(login(values.username, values.password));
+    if (this.props.error) {
+      return alert('An error occurred');
+    }
+    this.props
+      .dispatch(login(values.username, values.password))
+      .then(() => {
+        if (this.props.error) {
+          return alert('An error occurred');
+        }
+      })
+      .catch(() => {
+        if (this.props.error) {
+          return alert('An error occurred');
+        }
+      });
   };
 
   render() {
@@ -29,7 +43,8 @@ export class LoginPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  error: state.auth.error
 });
 
 export default connect(mapStateToProps)(LoginPage);
