@@ -3,9 +3,10 @@ node_js: node
 cache:
   directories:
     - node_modules
-env:
-  - CI=true
 deploy:
   provider: heroku
-  api_key:
-    secure:
+env:
+  matrix:
+    - CI=true
+  global:
+    secure: jg+g7RTDls7nMrw67rapdzbN2xqm3B0J46nHvUsJlb8kxHdToDyZcs8XWieQ6LwzQ6xnt2B8vNUZkHaYY6X687Nfg0Vx7xJo+Cim7+BsCji+pH10Re0NyBDzQD60jrxDgPVXuOjrVuxzv91kNZEab3zoZ6wUq67TEd4Yq5SAeJFw2Y6Vev4Q4jTlqSOYBv/J4uY+IJVkYufqLblts4ZeoMaIfvkO4NHRNUTLL3qE6eEuj2LRG252pPANKRi3F1fOkG/W0e6OmEaczQFi3jTAoJW0f36HtsT5bNNRlW55Yb7EntekVpn6Yq+DHVMlVQm816MvB1ajJ1D7k4o+NnUARonis693vFnsEorHHL1ScNEaPNQfKZ+XuDBHlqrGX68B1nvXWgyVKnnyOTEL1Sd3fndTbizH5FrGMmxAkoE8ypBo1MRC0xJz3aZJX9LUjDy/PzYcBzWfGMk8mVLhlCLrsY31S1XCoRirGtxH8FrbP0D5CQbOvmbBzrFmy3Lc/NBQ03RJeu76kjOxcPMQm/T5yRdEB9CzRJuzW6Q+CdJ+zOaJEZ9pRZN0koNEndk6WhoyJYcL4XHbHxFMYG6mSlgFjurcr+sxjIvBa4K48yJJfwGV94WaE7dtDLVTTtIYAjMc2kfkfZa8LBuL0NRsLk90nYfL7zen2TkWhbhK+mT2xlc=
