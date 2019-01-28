@@ -51,6 +51,10 @@ body {
   position: relative;
 }
 
+.alert {
+  color: #ed5665;
+}
+
 a {
   color: #fff;
   text-decoration: none;
