@@ -2,10 +2,10 @@ language: node_js
 node_js: node
 cache:
   directories:
-  - node_modules
+    - node_modules
 env:
-- CI=true
+  - CI=true
 deploy:
   provider: heroku
   api_key:
-    secure: rlkFxn3JVHqOt11rwsqClSJASGsgkWFiq6R4/K/JzBXBm5HFGvQKZuSUNcwpmm6dXssIxs5OKC+2/0NUb3a4GiDxMjP0fvzpENis7CWtBncxUSTBiA3bKtelh0KcerxrEQZv2gej6Jt8gC4WOopT99U3zvRKuCaYtLReQUO3lJWAZynd9CQuDaCOQ2uuSm71hCZQ2F/lW9A60bwc0I9Gs9Urx8utarY5k0ps5ThW+a2sSVGXfJA0LRSa3G8oSmAtWdVPLe3Rfaxy9PcGn6NfgXUOB6YcYckRNgHfbqS5wx7GNjKcKRAeruoKegXzEvANcnNGBjwyrZTRDSCf57IGGWZdhSJGFxblo5kyCqbzHZZEfapBzSbBO6vbq8NO+W8mxLXU8RTOHpADR/Lt2PocdwpSNUtGbYUgoqJdHQxdRq07k5GKS2dQRkPc4uoEf8W0uSiz48PxKone5OlVLPeMUdef0vJYcVX1/vX6neUlHbZPDyonof4Fu9QA1bwet5cOhxRYnWqTsLFbvRItqsx2sJvzYqD1ad83Yj5dU9bJHIZuP411mSEJmIgQjfeCAG/sJb4KlRF1VOPXZ3oMUVIVErfPWeK+KEgNuHwhdrM3FU2kVXRx5Y2bbbAI+PNTIx6bx+H2vfrjgPjTfYtySmAyv1eJq9g0UBT9ZSyvq34apzg=
+    secure:
