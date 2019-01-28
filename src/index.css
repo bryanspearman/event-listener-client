@@ -52,11 +52,11 @@ body {
 }
 
 .alert {
-  background-color: #fff;
-  padding: 5px;
+  background-color: #ed5665;
+  padding: 8px;
   margin: 5px;
-  border: 1px solid #2b8c96;
-  color: #ed5665;
+  border: 1px solid #000;
+  color: #fff;
 }
 
 a {

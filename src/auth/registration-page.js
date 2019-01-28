@@ -13,9 +13,12 @@ export class RegistrationPage extends React.Component {
       .dispatch(registerUser(user))
       .then(() => {
         if (this.props.error) {
-          return alert('An error occurred');
+          alert('An error occurred');
         }
-        this.props.history.push('/login');
+        if (!this.props.error) {
+          this.props.history.push('/login');
+          alert('Account Created!  Please login');
+        }
       })
       .catch(() => {
         if (this.props.error) {
