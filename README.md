@@ -4,8 +4,8 @@ Event Listener lets you count down to upcoming events or see how long its been s
 
 ### Demo Account
 
-Username: demo<br>
-Password: demo456789
+Username: demoapp<br>
+Password: demopassword
 
 [Try it out]
 
@@ -56,8 +56,8 @@ Bryan Spearman<br>
 
 ## Demo
 
-Username: demo<br>
-Password: demo456789
+Username: demoapp<br>
+Password: demopassword
 
 [Try it out]
 
