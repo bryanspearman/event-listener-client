@@ -4,7 +4,7 @@ import { Dashboard } from './dashboard';
 
 describe('<Dashboard />', () => {
   let getItemsMock = jest.fn();
-  let matchMock = { isExact: false };
+  let matchMock = { isExact: true };
   let itemListMock = [];
   let wrapper;
   beforeEach(() => {
