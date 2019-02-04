@@ -15,4 +15,4 @@ yarn-debug.log*
 yarn-error.log*
 /.vscode
 
-/test-practice
+/src/test-practice
