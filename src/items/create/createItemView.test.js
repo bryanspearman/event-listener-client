@@ -4,14 +4,17 @@ import { CreateItemForm } from './createItemForm';
 import { CreateItemView } from './createItemView';
 
 describe('<CreateItemView />', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<CreateItemView />);
+  });
+
   it('Renders without crashing', () => {
-    const wrapper = shallow(<CreateItemView />);
     expect(wrapper.exists('h1')).toEqual(true);
     expect(wrapper.find('h1').text()).toEqual('Create Event');
   });
 
-  it('Renders without crashing', () => {
-    const wrapper = shallow(<CreateItemView />);
+  it('Renders child component without crashing', () => {
     expect(wrapper.find(CreateItemForm)).toBeTruthy();
   });
 });
