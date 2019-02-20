@@ -23,6 +23,11 @@ export function LandingPage(props) {
               <strong>Sign Up - It's Free!</strong>
             </button>
           </Link>
+          <p>Try the DEMO account for a quick look!<br />
+          Username: demoapp<br />
+          Password: demopassword<br />
+          <Link to="/login">Login Here</Link>
+          </p>
           <p className="sml-txt">
             Already use Event Listener? <Link to="/login">Login here</Link>
           </p>
